@@ -7,7 +7,7 @@ Welcome to QuantumFlow_Neural_Network (QFNN) documentation!
 =================================================
 
 .. toctree::
-      :maxdepth: 2
+      :maxdepth: 3
    :caption: Contents:
 
 
