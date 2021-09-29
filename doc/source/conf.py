@@ -18,8 +18,8 @@ sys.path.insert(0, os.path.abspath('../../src/qfnn'))
 # -- Project information -----------------------------------------------------
 
 project = 'QFNN'
-copyright = '2021, zhirui&weiwen'
-author = 'zhirui&weiwen'
+copyright = '2021, JQub'
+author = 'Zhirui Hu & Weiwen Jiang'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
