@@ -25,13 +25,12 @@ class BaseCircuit(metaclass= abc.ABCMeta):
     BaseCircuit defines some fundamental functions of a circuit module.
     """
 
-
-    ############# Weiwen&Zhirui on 2021/09/26 ############
-    # Function: __init__
-    # Parameters: 
-    #     n_qubits: input qubits of each unit
-    #     n_repeats: repeat times of each unit
-    ######################################################
+    '''
+    Function: __init__
+    Parameters: 
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
+    '''
     def __init__(self,n_qubits,n_repeats):
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
