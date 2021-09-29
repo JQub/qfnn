@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-QuantumFlow Library API.
+<div style="font-size:12px"> QuantumFlow Neural Network (QFNN) API. </div>
 =================================================
 
 .. toctree::
