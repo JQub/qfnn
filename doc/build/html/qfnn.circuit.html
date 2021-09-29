@@ -47,7 +47,7 @@ Version          :1.0</p>
 <dt class="sig sig-object py" id="qfnn.circuit.lib_circuit_base.BaseCircuit">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.circuit.lib_circuit_base.</span></span><span class="sig-name descname"><span class="pre">BaseCircuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_repeats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.circuit.lib_circuit_base.BaseCircuit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Weiwen Test: BaseCircuit defines some fundamental functions of a circuit module.</p>
+<p>BaseCircuit is a class, which includes fundamental functions of a circuit module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -59,16 +59,19 @@ Version          :1.0</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.circuit.lib_circuit_base.BaseCircuit.add_input_qubits">
 <span class="sig-name descname"><span class="pre">add_input_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.circuit.lib_circuit_base.BaseCircuit.add_input_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function: add_qubits
-Note: Add a group of qubits as input qubit .
-:param circuit: The  circuit that you add the unit at the end
-:param name: The name of the group</p>
+<dd><p>Function add_input_qubits is to add a group of qubits as input qubit .</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The register of qubits</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>name</em>) – The  circuit that you add the unit at the end</p></li>
+<li><p><strong>name</strong> – The name of the group</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>qubits</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The register of qubits</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qubits</p>
 </dd>
 </dl>
 </dd></dl>
@@ -76,17 +79,20 @@ Note: Add a group of qubits as input qubit .
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.circuit.lib_circuit_base.BaseCircuit.add_qubits">
 <span class="sig-name descname"><span class="pre">add_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.circuit.lib_circuit_base.BaseCircuit.add_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function: add_qubits
-Note: Add a group of qubits to a circuit.
-:param circuit: The  circuit that you add the unit at the end
-:param name: The name of the group
-:param number: The number of qubits in the group.</p>
+<dd><p>Function add_qubits is to add a group of qubits to a circuit. [Test at 09/29]</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The register of qubits</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>number</em>) – The circuit that you add the unit at the end</p></li>
+<li><p><strong>name</strong> – The name of the group</p></li>
+<li><p><strong>name</strong> – The number of qubits in the group.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>qubits</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The register of qubits</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qubits</p>
 </dd>
 </dl>
 </dd></dl>
@@ -129,16 +135,19 @@ Note: Add a group of qubits to a circuit.
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.circuit.lib_circuit_linner_square.LinnerCircuit.add_input_qubits">
 <span class="sig-name descname"><span class="pre">add_input_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.circuit.lib_circuit_linner_square.LinnerCircuit.add_input_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function: add_qubits
-Note: Add a group of qubits as input qubit .
-:param circuit: The  circuit that you add the unit at the end
-:param name: The name of the group</p>
+<dd><p>Function add_input_qubits is to add a group of qubits as input qubit .</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The register of qubits</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>name</em>) – The  circuit that you add the unit at the end</p></li>
+<li><p><strong>name</strong> – The name of the group</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>qubits</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The register of qubits</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qubits</p>
 </dd>
 </dl>
 </dd></dl>
@@ -287,16 +296,19 @@ Note: Add a group of qubits as input qubit .
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.circuit.lib_qiskit_commons.UMatrixCircuit.add_input_qubits">
 <span class="sig-name descname"><span class="pre">add_input_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.circuit.lib_qiskit_commons.UMatrixCircuit.add_input_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function: add_qubits
-Note: Add a group of qubits as input qubit .
-:param circuit: The  circuit that you add the unit at the end
-:param name: The name of the group</p>
+<dd><p>Function add_input_qubits is to add a group of qubits as input qubit .</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>The register of qubits</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>name</em>) – The  circuit that you add the unit at the end</p></li>
+<li><p><strong>name</strong> – The name of the group</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>qubits</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The register of qubits</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qubits</p>
 </dd>
 </dl>
 </dd></dl>
