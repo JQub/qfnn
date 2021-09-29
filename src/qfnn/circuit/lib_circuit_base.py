@@ -34,7 +34,7 @@ class BaseCircuit(metaclass= abc.ABCMeta):
 
     def add_qubits(self,circuit,name,number):
         """
-        Function add_qubits is to add a group of qubits to a circuit.
+        Function add_qubits is to add a group of qubits to a circuit. [Test at 09/29]
 
         Args:
             name (circuit): The circuit that you add the unit at the end
