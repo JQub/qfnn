@@ -47,16 +47,17 @@ class BaseCircuit(metaclass= abc.ABCMeta):
         circuit.add_register(qubits)
         return qubits
 
-    ############# Weiwen&Zhirui on 2021/09/26 ############
-    # Function: add_qubits
-    # Note: Add a group of qubits as input qubit .
-    # Parameters: 
-    #     circuit: The  circuit that you add the unit at the end
-    #     name: The name of the group
-    # Returns: 
-    #      qubits: The register of qubits
-    ######################################################
+
     def add_input_qubits(self,circuit,name):
+        """
+        Function: add_qubits
+        Note: Add a group of qubits as input qubit .
+        Parameters:
+             circuit: The  circuit that you add the unit at the end
+             name: The name of the group
+        Returns:
+             qubits: The register of qubits
+        """
         inps = []
         for i in range(self.n_repeats):
             inp = QuantumRegister(self.n_qubits,name+str(i)+"_qbit")
