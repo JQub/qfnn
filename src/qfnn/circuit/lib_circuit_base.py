@@ -24,8 +24,8 @@ class BaseCircuit(metaclass= abc.ABCMeta):
     """BaseCircuit is a class, which includes fundamental functions of a circuit module.
 
     Args:
-         name (n_qubits): input qubits of each unit
-         name (n_repeats): repeat times of each unit
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
 
     """
     def __init__(self,n_qubits,n_repeats):
@@ -37,9 +37,9 @@ class BaseCircuit(metaclass= abc.ABCMeta):
         Function add_qubits is to add a group of qubits to a circuit. [Test at 09/29]
 
         Args:
-            name (circuit): The circuit that you add the unit at the end
-            name (name): The name of the group
-            name (number):  The number of qubits in the group.
+            circuit: The circuit that you add the unit at the end
+            name: The name of the group
+            number:  The number of qubits in the group.
 
         Returns:
             qubits: The register of qubits
@@ -55,8 +55,8 @@ class BaseCircuit(metaclass= abc.ABCMeta):
         Function add_input_qubits is to add a group of qubits as input qubit .
 
         Args:
-             name (circuit): The  circuit that you add the unit at the end
-             name (name): The name of the group
+             circuit: The  circuit that you add the unit at the end
+             name: The name of the group
 
         Returns:
              qubits: The register of qubits
