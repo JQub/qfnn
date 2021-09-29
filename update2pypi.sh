@@ -6,7 +6,7 @@ python -m build
 twine upload dist/*
 echo "Wait for updating qfnn"
 
-sleep 2
+sleep 5
 echo "Start to update qfnn"
 pip install qfnn -U
 
