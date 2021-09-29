@@ -7,10 +7,10 @@ cd JQuantumFlow_tutorial/
 - sh update2pypi.sh
 
 ## How to generate doc:
-pip install sphinx
-cd doc
-sphinx-apidoc -o source ../src/JQuantumFlow/
-make html
-cd build/html
+- pip install sphinx
+- cd doc
+- sphinx-apidoc -o source ../src/JQuantumFlow/
+- make html
+- cd build/html
 
 
