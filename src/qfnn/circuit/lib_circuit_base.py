@@ -21,11 +21,12 @@ import copy
 import abc
 
 class BaseCircuit(metaclass= abc.ABCMeta):
-    """Weiwen Test: BaseCircuit defines some fundamental functions of a circuit module.
+    """BaseCircuit is a class, which includes fundamental functions of a circuit module.
 
     Args:
          name (n_qubits): input qubits of each unit
          name (n_repeats): repeat times of each unit
+
     """
     def __init__(self,n_qubits,n_repeats):
         self.n_qubits = n_qubits
@@ -33,14 +34,16 @@ class BaseCircuit(metaclass= abc.ABCMeta):
 
     def add_qubits(self,circuit,name,number):
         """
-        Function: add_qubits
-        Note: Add a group of qubits to a circuit.
-        Parameters:
-             circuit: The  circuit that you add the unit at the end
-             name: The name of the group
-             number:  The number of qubits in the group.
+        Function add_qubits is to add a group of qubits to a circuit.
+
+        Args:
+            name (circuit): The circuit that you add the unit at the end
+            name (name): The name of the group
+            name (number):  The number of qubits in the group.
+
         Returns:
-              qubits: The register of qubits
+            qubits: The register of qubits
+
         """
         qubits = QuantumRegister(number,name)
         circuit.add_register(qubits)
@@ -49,13 +52,15 @@ class BaseCircuit(metaclass= abc.ABCMeta):
 
     def add_input_qubits(self,circuit,name):
         """
-        Function: add_qubits
-        Note: Add a group of qubits as input qubit .
-        Parameters:
-             circuit: The  circuit that you add the unit at the end
-             name: The name of the group
+        Function add_input_qubits is to add a group of qubits as input qubit .
+
+        Args:
+             name (circuit): The  circuit that you add the unit at the end
+             name (name): The name of the group
+
         Returns:
              qubits: The register of qubits
+
         """
         inps = []
         for i in range(self.n_repeats):
