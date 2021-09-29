@@ -23,30 +23,26 @@ import abc
 class BaseCircuit(metaclass= abc.ABCMeta):
     """
     BaseCircuit defines some fundamental functions of a circuit module.
-    """
 
-    '''
-    Function: __init__
-    Parameters: 
+    Parameters:
          n_qubits: input qubits of each unit
          n_repeats: repeat times of each unit
-    '''
+    """
     def __init__(self,n_qubits,n_repeats):
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
 
-
-    ############# Weiwen&Zhirui on 2021/09/26 ############
-    # Function: add_qubits
-    # Note: Add a group of qubits to a circuit.
-    # Parameters: 
-    #     circuit: The  circuit that you add the unit at the end
-    #     name: The name of the group
-    #     number:  The number of qubits in the group.
-    # Returns: 
-    #      qubits: The register of qubits
-    ######################################################
     def add_qubits(self,circuit,name,number):
+        """
+        Function: add_qubits
+        Note: Add a group of qubits to a circuit.
+        Parameters:
+             circuit: The  circuit that you add the unit at the end
+             name: The name of the group
+             number:  The number of qubits in the group.
+        Returns:
+              qubits: The register of qubits
+        """
         qubits = QuantumRegister(number,name)
         circuit.add_register(qubits)
         return qubits
