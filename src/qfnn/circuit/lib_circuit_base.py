@@ -21,12 +21,11 @@ import copy
 import abc
 
 class BaseCircuit(metaclass= abc.ABCMeta):
-    """
-    BaseCircuit defines some fundamental functions of a circuit module.
+    """Weiwen Test: BaseCircuit defines some fundamental functions of a circuit module.
 
-    Parameters:
-         n_qubits: input qubits of each unit
-         n_repeats: repeat times of each unit
+    Args:
+         name (n_qubits): input qubits of each unit
+         name (n_repeats): repeat times of each unit
     """
     def __init__(self,n_qubits,n_repeats):
         self.n_qubits = n_qubits
