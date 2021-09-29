@@ -1,7 +1,7 @@
-JQuantumFlow
-============
+qfnn
+====
 
 .. toctree::
    :maxdepth: 4
 
-   JQuantumFlow
+   qfnn
