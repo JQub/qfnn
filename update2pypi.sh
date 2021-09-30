@@ -10,6 +10,7 @@ sleep 5
 echo "Start to update qfnn"
 pip install qfnn -U
 
+pip install qfnn -U
 
 echo "Wait for updating API document"
 sleep 2
