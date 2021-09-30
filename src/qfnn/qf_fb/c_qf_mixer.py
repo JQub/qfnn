@@ -1,8 +1,8 @@
-from .n_lyr import *
-from .p_lyr import *
-from .u_lyr import *
-from .v_lyr import *
-from .b_lyr import *
+from ..qf_net.n_lyr import *
+from ..qf_net.p_lyr import *
+from ..qf_net.u_lyr import *
+from ..qf_net.v_lyr import *
+from ..qf_net.b_lyr import *
 
 ## Define the NN architecture
 class Net(nn.Module):
