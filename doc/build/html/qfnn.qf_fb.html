@@ -159,11 +159,77 @@ Argument may be a filename, compressed filename, or file object.</p>
 </dd></dl>
 
 </section>
-<section id="qfnn-qf-fb-c-qf-mixer-module">
-<h2>qfnn.qf_fb.c_qf_mixer module<a class="headerlink" href="#qfnn-qf-fb-c-qf-mixer-module" title="Permalink to this headline">¶</a></h2>
+<section id="module-qfnn.qf_fb.c_qf_mixer">
+<span id="qfnn-qf-fb-c-qf-mixer-module"></span><h2>qfnn.qf_fb.c_qf_mixer module<a class="headerlink" href="#module-qfnn.qf_fb.c_qf_mixer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qfnn.qf_fb.c_qf_mixer.Net">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_qf_mixer.</span></span><span class="sig-name descname"><span class="pre">Net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">given_ang</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ang</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'False'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_qf_mixer.Net" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_fb.c_qf_mixer.Net.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_qf_mixer.Net.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qfnn.qf_fb.c_qf_mixer.Net.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#qfnn.qf_fb.c_qf_mixer.Net.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qfnn.qf_fb.c_qf_mixer.binarize">
+<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_qf_mixer.</span></span><span class="sig-name descname"><span class="pre">binarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_qf_mixer.binarize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qfnn.qf_fb.c_qf_mixer.clipfunc">
+<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_qf_mixer.</span></span><span class="sig-name descname"><span class="pre">clipfunc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_qf_mixer.clipfunc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="qfnn-qf-fb-q-input-module">
-<h2>qfnn.qf_fb.q_input module<a class="headerlink" href="#qfnn-qf-fb-q-input-module" title="Permalink to this headline">¶</a></h2>
+<section id="module-qfnn.qf_fb.q_input">
+<span id="qfnn-qf-fb-q-input-module"></span><h2>qfnn.qf_fb.q_input module<a class="headerlink" href="#module-qfnn.qf_fb.q_input" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="qfnn.qf_fb.q_input.UMatrixCircuit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.q_input.</span></span><span class="sig-name descname"><span class="pre">UMatrixCircuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_repeats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.q_input.UMatrixCircuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="qfnn.qf_circ.html#qfnn.qf_circ.base.BaseCircuit" title="qfnn.qf_circ.base.BaseCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">qfnn.qf_circ.base.BaseCircuit</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_fb.q_input.UMatrixCircuit.add_input_qubits">
+<span class="sig-name descname"><span class="pre">add_input_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.q_input.UMatrixCircuit.add_input_qubits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function add_input_qubits is to add a group of qubits as input qubit .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p></li>
+<li><p><strong>name</strong> – The name of the group</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The register of qubits</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>qubits</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_fb.q_input.UMatrixCircuit.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.q_input.UMatrixCircuit.forward" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-qfnn.qf_fb.q_output">
 <span id="qfnn-qf-fb-q-output-module"></span><h2>qfnn.qf_fb.q_output module<a class="headerlink" href="#module-qfnn.qf_fb.q_output" title="Permalink to this headline">¶</a></h2>
