@@ -12,6 +12,7 @@ import copy
 
 from .lib_gate import *
 from .lib_circuit_base import *
+
 def auth_output():
     print("welcome to Weiwen Jiang's Quantumflow")
 ################ Weiwen on 12-30-2020 ################
