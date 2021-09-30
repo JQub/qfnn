@@ -13,6 +13,9 @@ import abc
 from qiskit import QuantumRegister
 from qiskit.extensions import UnitaryGate
 from .gates import *
+import copy
+import numpy as np
+import math
 
 class BaseCircuit(metaclass= abc.ABCMeta):
     """BaseCircuit is a class, which includes fundamental functions of a circuit module.

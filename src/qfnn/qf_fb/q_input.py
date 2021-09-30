@@ -1,4 +1,4 @@
-from .base import *
+from ..qf_circ.base import *
 from qiskit.extensions import UnitaryGate
 
 class UMatrixCircuit(BaseCircuit):
