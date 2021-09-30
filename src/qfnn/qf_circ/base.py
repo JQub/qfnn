@@ -14,14 +14,6 @@ from qiskit import QuantumRegister
 from qiskit.extensions import UnitaryGate
 from .gates import *
 
-import numpy as np
-from qiskit.tools.monitor import job_monitor
-from qiskit import Aer, execute,IBMQ,transpile
-import math
-from qiskit import BasicAer
-import copy
-
-
 class BaseCircuit(metaclass= abc.ABCMeta):
     """BaseCircuit is a class, which includes fundamental functions of a circuit module.
 

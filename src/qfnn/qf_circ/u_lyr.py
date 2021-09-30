@@ -1,5 +1,5 @@
-import numpy as np
 from .base import *
+import numpy as np
 ################ Weiwen on 06-02-2021 ################
 # QuantumFlow Weight Generation for U-Layer
 ######################################################
