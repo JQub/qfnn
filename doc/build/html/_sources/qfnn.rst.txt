@@ -7,8 +7,10 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   qfnn.circuit
-   qfnn.training
+   qfnn.qf_circ
+   qfnn.qf_fb
+   qfnn.qf_map
+   qfnn.qf_net
 
 Module contents
 ---------------

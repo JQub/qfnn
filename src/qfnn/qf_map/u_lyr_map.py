@@ -1,5 +1,8 @@
 import math
 
+'''
+This is the implementation of Algorithm 4 in Box2 of QuantumFlow paper at NCOMM
+'''
 
 def change_sign(sign, bin):
     one_positions = []
