@@ -169,24 +169,3 @@ class LinnerCircuit(BaseCircuit):
             pass
         return index_list
 
-    @classmethod
-    def change_sign(self, sign, bin):
-        affect_num = [bin]
-        one_positions = []
-        try:
-            beg_pos = 0
-            while True:
-                find_pos = bin.index("1", beg_pos)
-                one_positions.append(find_pos)
-                beg_pos = find_pos + 1
-        except Exception as exception:
-            # print("Not Found")
-            pass
-        for k, v in sign.items():
-            change = True
-            for pos in one_positions:
-                if k[pos] == "0":
-                    change = False
-                    break
-            if change:
-                sign[k] = -1 * v
