@@ -30,8 +30,12 @@ class LinnerCircuit(BaseCircuit):
     def add_aux(self,circuit):
         if self.n_qubits < 3:
             aux = self.add_qubits(circuit,"aux_qbit",1)
+        # TODO: 09/30, Potential bug.
         elif self.n_qubits >= 3:
             aux = self.add_qubits(circuit,"aux_qbit",2)
+        else:
+            print('The input size is too big. Qubits should be less than 4.')
+            sys.exit(0)
         return aux
 
     def add_input_qubits(self,circuit):
@@ -64,6 +68,9 @@ class LinnerCircuit(BaseCircuit):
                     ExtendGate.ccz(circuit,qbits[z_pos[0]],qbits[z_pos[1]],qbits[z_pos[2]],aux[0])
                 elif z_count==4:
                     ExtendGate.cccz(circuit,qbits[z_pos[0]],qbits[z_pos[1]],qbits[z_pos[2]],qbits[z_pos[3]],aux[0],aux[1])
+                else:
+                    print("Not support yet!")
+                    sys.exit(0)
         circuit.barrier()
     
     def sum2(self,circuit,in_qubits,out_qubit,aux = []):
@@ -74,7 +81,7 @@ class LinnerCircuit(BaseCircuit):
         for i in range(self.n_repeats):
             qbits = in_qubits[i]
             if self.n_qubits==1:
-                circuit.cx(qbits[0],qbits[1],out_qubit[i])
+                circuit.cx(qbits[0],out_qubit[i])
             elif self.n_qubits==2:
                 circuit.ccx(qbits[0],qbits[1],out_qubit[i])
             elif self.n_qubits==3:
@@ -338,8 +345,8 @@ class PLayerCircuit(BaseCircuit):
             for idx in range(weight[i].flatten().size()[0]):
                 if weight[i][idx]==-1:
                     circuit.x(in_qubits[idx])
+            # TODO: Potential bug for P-LYR
             #sum and pow2
-        
             circuit.h(out_qubits[i])
             circuit.cz(in_qubits[0],out_qubits[i])
             circuit.x(out_qubits[i])
