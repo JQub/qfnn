@@ -1,4 +1,4 @@
-VERSION=`cat setup.cfg  | grep '^version =' | sed 's/version = 0.0.//'`
+VERSION=`cat setup.cfg  | grep '^version =' | sed 's/version = 0.1.//'`
 NEW_VERSION=`expr $VERSION + 1`
 sed -i "s/version = 0.1.$VERSION/version = 0.1.$NEW_VERSION/g" setup.cfg
 
