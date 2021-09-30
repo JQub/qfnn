@@ -1,7 +1,7 @@
 from .base import *
 
 # just for temp
-class PLayerCircuit(BaseCircuit):
+class P_LYR_Circ(BaseCircuit):
     def __init__(self, n_qubits, n_repeats):
         """
         param n_qubits: input qubits of each unit

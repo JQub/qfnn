@@ -3,7 +3,7 @@ import numpy as np
 ################ Weiwen on 06-02-2021 ################
 # QuantumFlow Weight Generation for U-Layer
 ######################################################
-class U_LYR(LinnerCircuit):
+class U_LYR_Circ(LinnerCircuit):
 
     def __init__(self, n_qubits, n_repeats):
         """

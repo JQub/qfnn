@@ -1,7 +1,7 @@
 from .base import *
 
 
-class NormerlizeCircuit(BaseCircuit):
+class N_LYR_Circ(BaseCircuit):
     def __init__(self, n_qubits, n_repeats=1):
         """
         param n_qubits: input qubits of each unit
