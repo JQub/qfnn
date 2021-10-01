@@ -1,6 +1,6 @@
 from .base import *
 
-class FFNNCircuit(LinnerCircuit):
+class F_LYR_Circ(LinnerCircuit):
 
     def __init__(self, n_qubits, n_repeats):
         """
