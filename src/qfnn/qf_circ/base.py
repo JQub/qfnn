@@ -18,7 +18,8 @@ import numpy as np
 import math
 
 class BaseCircuit(metaclass= abc.ABCMeta):
-    """BaseCircuit is a class, which includes fundamental functions of a circuit module.
+    """
+    BaseCircuit is a class, which includes fundamental functions of a circuit module.
 
     Args:
          n_qubits: input qubits of each unit
@@ -66,23 +67,27 @@ class BaseCircuit(metaclass= abc.ABCMeta):
             inps.append(inp)
         return inps
 
-    ############# Weiwen&Zhirui on 2021/09/26 ############
-    # Function: add_qubits
-    # Note: Add a circuit unit of the clss at the end.
-    # Parameters:
-    #     circuit: The  circuit that you add the unit at the end
-    ######################################################
+
     @abc.abstractclassmethod
     def forward(self,circuit):
+        """
+        Function forward is to add a circuit unit to the input qubits.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+        """
         pass
 
 
 class LinnerCircuit(BaseCircuit):
+    """
+    LinnerCircuit is a base class of u-layer circuit and ffnn circuit.
+
+    Args:
+        n_qubits: input qubits of each unit
+        n_repeats: repeat times of each unit
+    """
     def __init__(self, n_qubits, n_repeats):
-        """
-      param n_qubits: input qubits of each unit
-      param n_repeats: repeat times of each unit
-        """
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
         if self.n_qubits > 4:
@@ -90,6 +95,15 @@ class LinnerCircuit(BaseCircuit):
             sys.exit(0)
 
     def add_aux(self, circuit):
+        """
+        Function add  aux qubits is to add a group of qubits as input qubit .
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+        Returns:
+             qubits: The register of qubits
+
+        """
         if self.n_qubits < 3:
             aux = self.add_qubits(circuit, "aux_qbit", 1)
         # TODO: 09/30, Potential bug.
@@ -101,18 +115,47 @@ class LinnerCircuit(BaseCircuit):
         return aux
 
     def add_input_qubits(self, circuit):
+        """
+        Function add_input_qubits is to add a group of qubits as input qubit .
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+        Returns:
+             qubits: The register of qubits
+
+        """
         inputs = BaseCircuit.add_input_qubits(self, circuit, "u_layer")
         return inputs
 
     def add_out_qubits(self, circuit):
+        """
+        Function add output qubits is to add a group of qubits as input qubit .
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+        Returns:
+             qubits: The register of qubits
+
+        """
         out_qubits = self.add_qubits(circuit, "u_layer_output_qbit", self.n_repeats)
         return out_qubits
 
     @abc.abstractclassmethod
     def extract_from_weight(weight):
+
         pass
 
     def add_weight(self, circuit, weight, in_qubits, data_matrix=None, aux=[]):
+        """
+        Function add output qubits is to add the circuit of ci=wi*xi.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             weight: A list of binary weight.
+             in_qubits: The register of input qubits
+             data_matrix:The unitary matrix encoding into the qubits
+             aux: aux qubits
+        """
         for i in range(self.n_repeats):
             n_q_gates, n_idx = self.extract_from_weight(weight[i])
             if data_matrix != None and n_idx != None:
@@ -137,6 +180,15 @@ class LinnerCircuit(BaseCircuit):
         circuit.barrier()
 
     def sum2(self, circuit, in_qubits, out_qubit, aux=[]):
+        """
+        Function add output qubits is to add the circuit of (∑ci)^2/N.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             in_qubits: The register of input qubits
+             out_qubit: The register of output qubits
+             aux: aux qubits
+        """
         for i in range(self.n_repeats):
             circuit.h(in_qubits[i])
             circuit.x(in_qubits[i])
@@ -153,6 +205,17 @@ class LinnerCircuit(BaseCircuit):
                 ExtendGate.ccccx(circuit, qbits[0], qbits[1], qbits[2], qbits[3], out_qubit[i], aux[0], aux[1])
 
     def forward(self, circuit, weight, in_qubits, out_qubit, data_matrix=None, aux=[]):
+        """
+        Function add output qubits is to add the circuit of (∑wi*xi)^2/N.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             weight: A list of binary weight.
+             in_qubits: The register of input qubits
+             out_qubit: The register of output qubits
+             data_matrix:The unitary matrix encoding into the qubits
+             aux: aux qubits
+        """
         self.add_weight(circuit, weight, in_qubits, data_matrix, aux)
         self.sum2(circuit, in_qubits, out_qubit, aux)
 
