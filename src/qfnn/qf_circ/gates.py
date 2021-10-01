@@ -153,10 +153,10 @@ if __name__ == "__main__":
     import warnings
 
     warnings.filterwarnings("ignore")
-    input = QuantumRegister(6, "in")
-    aux = QuantumRegister(4, "aux")
+    input = QuantumRegister(3, "in")
+    aux = QuantumRegister(1, "aux")
     circ = QuantumCircuit(input, aux)
-    ExtendGate.cnx(circ,input,aux,6)
-    circ.barrier()
-    ExtendGate.cnz(circ, input, aux, 6)
+    # ExtendGate.cnx(circ,input,aux,3)
+    # circ.barrier()
+    ExtendGate.cnz(circ, input, aux, 3)
     print(circ)

@@ -85,19 +85,19 @@ class LinnerCircuit(BaseCircuit):
         """
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
-        if self.n_qubits > 4:
-            print('The input size is too big. Qubits should be less than 4.')
-            sys.exit(0)
+        # if self.n_qubits > 4:
+        #     print('The input size is too big. Qubits should be less than 4.')
+        #     sys.exit(0)
 
     def add_aux(self, circuit):
         if self.n_qubits < 3:
             aux = self.add_qubits(circuit, "aux_qbit", 1)
         # TODO: 09/30, Potential bug.
         elif self.n_qubits >= 3:
-            aux = self.add_qubits(circuit, "aux_qbit", 2)
-        else:
-            print('The input size is too big. Qubits should be less than 4.')
-            sys.exit(0)
+            aux = self.add_qubits(circuit, "aux_qbit", self.n_qubits-2)
+        # else:
+        #     print('The input size is too big. Qubits should be less than 4.')
+        #     sys.exit(0)
         return aux
 
     def add_input_qubits(self, circuit):
@@ -131,9 +131,9 @@ class LinnerCircuit(BaseCircuit):
                     operate_qubits = []
                     aux_qubits = []
                     for k in range(z_count):
-                        operate_qubits.append(qbits[z_pos[i]])
+                        operate_qubits.append(qbits[z_pos[k]])
                         if k < z_count - 2:
-                            aux_qubits.append(aux[i])
+                            aux_qubits.append(aux[k])
                     ExtendGate.cnz(circuit, operate_qubits, aux_qubits, z_count)
                 # elif z_count == 3:
                 #     ExtendGate.ccz(circuit, qbits[z_pos[0]], qbits[z_pos[1]], qbits[z_pos[2]], aux[0])
@@ -160,11 +160,11 @@ class LinnerCircuit(BaseCircuit):
                 operate_qubits = []
                 aux_qubits = []
                 for k in range(self.n_qubits):
-                    operate_qubits.append(qbits[i])
+                    operate_qubits.append(qbits[k])
                     if k < self.n_qubits - 2:
-                        aux_qubits.append(aux[i])
+                        aux_qubits.append(aux[k])
                 operate_qubits.append(out_qubit[i])
-                ExtendGate.cnz(circuit, operate_qubits, aux_qubits, self.n_qubits+1)
+                ExtendGate.cnx(circuit, operate_qubits, aux_qubits, self.n_qubits+1)
             #
             # elif self.n_qubits == 3:
             #     ExtendGate.cccx(circuit, qbits[0], qbits[1], qbits[2], out_qubit[i], aux[0], aux[1])
