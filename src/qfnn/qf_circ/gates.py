@@ -1,3 +1,5 @@
+import sys
+
 class ExtendGate():
 
     ################ Weiwen on 06-02-2021 ################
@@ -51,6 +53,52 @@ class ExtendGate():
         circ.ccx(q1, q2, aux1)
         return circ
 
+    @classmethod
+    def cnz(cls, circ, q, aux, q_num):
+        if q_num<=2:
+            print("Please use cz instead of cnz!")
+            sys.exit(0)
+        else:
+            ccx_list = []
+            p0 = q[0]
+            p1 = q[1]
+            p2 = aux[0]
+            circ.ccx(p0, p1, p2)
+            ccx_list.append((p0,p1,p2))
+            for i in range(2,q_num-1):
+                p0 = q[i]
+                p1 = p2
+                p2 = aux[i-1]
+                circ.ccx(p0, p1, p2)
+                ccx_list.append((p0, p1, p2))
+            circ.cz(aux[q_num-3],q[q_num-1])
+
+            for gate in reversed(ccx_list):
+                circ.ccx(gate[0],gate[1],gate[2])
+
+    @classmethod
+    def cnx(cls, circ, q, aux, q_num):
+        if q_num <= 3:
+            print("Please use ccx instead of cnx!")
+            sys.exit(0)
+        else:
+            ccx_list = []
+            p0 = q[0]
+            p1 = q[1]
+            p2 = aux[0]
+            circ.ccx(p0, p1, p2)
+            ccx_list.append((p0, p1, p2))
+            for i in range(2, q_num - 2):
+                p0 = q[i]
+                p1 = p2
+                p2 = aux[i - 1]
+                circ.ccx(p0, p1, p2)
+                ccx_list.append((p0, p1, p2))
+            circ.ccx(aux[q_num - 4], q[q_num - 2], q[q_num - 1])
+
+            for gate in reversed(ccx_list):
+                circ.ccx(gate[0], gate[1], gate[2])
+
     ################ Weiwen on 12-30-2020 ################
     # Function: cccz from Listing 4
     # Note: using the basic Toffoli gate to implement ccccx
@@ -99,3 +147,16 @@ class ExtendGate():
         for idx in range(len(state)):
             if state[idx] == '0':
                 circ.x(qubits[idx])
+
+if __name__ == "__main__":
+    from qiskit import QuantumRegister, QuantumCircuit
+    import warnings
+
+    warnings.filterwarnings("ignore")
+    input = QuantumRegister(6, "in")
+    aux = QuantumRegister(4, "aux")
+    circ = QuantumCircuit(input, aux)
+    ExtendGate.cnx(circ,input,aux,6)
+    circ.barrier()
+    ExtendGate.cnz(circ, input, aux, 6)
+    print(circ)

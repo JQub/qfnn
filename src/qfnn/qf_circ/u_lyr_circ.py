@@ -1,14 +1,12 @@
 from .base import *
 from ..qf_map.u_lyr_map import *
-################ Weiwen on 06-02-2021 ################
-# QuantumFlow Weight Generation for U-Layer
-######################################################
+
 class U_LYR_Circ(LinnerCircuit):
 
     def __init__(self, n_qubits, n_repeats):
         """
-      param n_qubits: input qubits of each unit
-      param n_repeats: repeat times of each unit
+        param n_qubits: input qubits of each unit
+        param n_repeats: repeat times of each unit
         """
         LinnerCircuit.__init__(self, n_qubits, n_repeats)
 
@@ -71,3 +69,26 @@ class U_LYR_Circ(LinnerCircuit):
                     ret_index[i] = j
                     break
         return quantum_gates, ret_index
+
+if __name__ == "__main__":
+    import torch
+
+    weight_1 = torch.tensor([[1., 1., 1., 1., 1., 1., 1., -1., 1., -1., 1., -1., 1., 1., 1., 1.],
+                             [-1., -1., -1., -1., -1., -1., -1., -1., -1., 1., -1., 1., -1., -1., -1., -1.]])
+    #define your input and output number
+    u_layer = U_LYR_Circ(4,2)
+    #init circuit
+    opt_circ = QuantumCircuit()
+    #add input qubit to your circuit
+    inps = u_layer.add_input_qubits(opt_circ)
+
+    #add auxiliary qubit to your circuit
+    aux =u_layer.add_aux(opt_circ)
+
+    #add output qubit to your circuit
+    u_layer_out_qubits = u_layer.add_out_qubits(opt_circ)
+
+    quantum_matrix = torch.eye(16)
+
+    #add ulayer to your circuit
+    u_layer.forward(opt_circ,weight_1,inps,u_layer_out_qubits,quantum_matrix,aux)
