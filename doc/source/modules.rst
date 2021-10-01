@@ -2,6 +2,7 @@ qfnn
 ====
 
 .. toctree::
-   :maxdepth: 1
+      :maxdepth: 1
 
    qfnn
+
