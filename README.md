@@ -14,7 +14,7 @@ cd JQuantumFlow_tutorial/
 ## How to generate doc:
 - pip install sphinx
 - cd doc
-- sphinx-apidoc -o source ../src/qfnn/
+- sphinx-apidoc -o source ../src/qfnn/ -e
 - make html
 - cd build/html
 
