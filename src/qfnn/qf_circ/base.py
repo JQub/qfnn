@@ -122,18 +122,27 @@ class LinnerCircuit(BaseCircuit):
                 z_count = gate.count("1")
                 # z_pos = get_index_list(gate,"1")
                 z_pos = self.get_index_list(gate[::-1], "1")
+
                 if z_count == 1:
                     circuit.z(qbits[z_pos[0]])
                 elif z_count == 2:
                     circuit.cz(qbits[z_pos[0]], qbits[z_pos[1]])
-                elif z_count == 3:
-                    ExtendGate.ccz(circuit, qbits[z_pos[0]], qbits[z_pos[1]], qbits[z_pos[2]], aux[0])
-                elif z_count == 4:
-                    ExtendGate.cccz(circuit, qbits[z_pos[0]], qbits[z_pos[1]], qbits[z_pos[2]], qbits[z_pos[3]], aux[0],
-                                    aux[1])
                 else:
-                    print("Not support yet!")
-                    sys.exit(0)
+                    operate_qubits = []
+                    aux_qubits = []
+                    for k in range(z_count):
+                        operate_qubits.append(qbits[z_pos[i]])
+                        if k < z_count - 2:
+                            aux_qubits.append(aux[i])
+                    ExtendGate.cnz(circuit, operate_qubits, aux_qubits, z_count)
+                # elif z_count == 3:
+                #     ExtendGate.ccz(circuit, qbits[z_pos[0]], qbits[z_pos[1]], qbits[z_pos[2]], aux[0])
+                # elif z_count == 4:
+                #     ExtendGate.cccz(circuit, qbits[z_pos[0]], qbits[z_pos[1]], qbits[z_pos[2]], qbits[z_pos[3]], aux[0],
+                #                     aux[1])
+                # else:
+                #     print("Not support yet!")
+                #     sys.exit(0)
         circuit.barrier()
 
     def sum2(self, circuit, in_qubits, out_qubit, aux=[]):
@@ -147,10 +156,20 @@ class LinnerCircuit(BaseCircuit):
                 circuit.cx(qbits[0], out_qubit[i])
             elif self.n_qubits == 2:
                 circuit.ccx(qbits[0], qbits[1], out_qubit[i])
-            elif self.n_qubits == 3:
-                ExtendGate.cccx(circuit, qbits[0], qbits[1], qbits[2], out_qubit[i], aux[0], aux[1])
-            elif self.n_qubits == 4:
-                ExtendGate.ccccx(circuit, qbits[0], qbits[1], qbits[2], qbits[3], out_qubit[i], aux[0], aux[1])
+            else:
+                operate_qubits = []
+                aux_qubits = []
+                for k in range(self.n_qubits):
+                    operate_qubits.append(qbits[i])
+                    if k < self.n_qubits - 2:
+                        aux_qubits.append(aux[i])
+                operate_qubits.append(out_qubit[i])
+                ExtendGate.cnz(circuit, operate_qubits, aux_qubits, self.n_qubits+1)
+            #
+            # elif self.n_qubits == 3:
+            #     ExtendGate.cccx(circuit, qbits[0], qbits[1], qbits[2], out_qubit[i], aux[0], aux[1])
+            # elif self.n_qubits == 4:
+            #     ExtendGate.ccccx(circuit, qbits[0], qbits[1], qbits[2], qbits[3], out_qubit[i], aux[0], aux[1])
 
     def forward(self, circuit, weight, in_qubits, out_qubit, data_matrix=None, aux=[]):
         self.add_weight(circuit, weight, in_qubits, data_matrix, aux)
