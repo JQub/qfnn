@@ -22,13 +22,11 @@ class ExtendGate():
         return circ
 
     @classmethod
-    def cccx(cls, circ, q1, q2, q3, q4, aux1, aux2):
+    def cccx(cls, circ, q1, q2, q3, q4, aux1):
         # Apply Z-gate to a state controlled by 3 qubits
         circ.ccx(q1, q2, aux1)
-        circ.ccx(q3, aux1, aux2)
-        circ.cx(aux2, q4)
+        circ.ccx(q3, aux1, q4)
         # cleaning the aux bits
-        circ.ccx(q3, aux1, aux2)
         circ.ccx(q1, q2, aux1)
         return circ
 
@@ -143,20 +141,26 @@ class ExtendGate():
         for idx in range(len(state)):
             if state[idx] == '0':
                 circ.x(qubits[idx])
-        cls.cccz(circ, qubits[0], qubits[1], qubits[2], qubits[3], aux[0], aux[1])
+        if len(state) ==1:
+            circ.z(qubits[0])
+        elif len(state) ==2:
+            circ.cz(qubits[0], qubits[1])
+        else:
+            cls.cnz(circ,qubits,aux,len(state))
+        #cls.cccz(circ, qubits[0], qubits[1], qubits[2], qubits[3], aux[0], aux[1])
         for idx in range(len(state)):
             if state[idx] == '0':
                 circ.x(qubits[idx])
 
-if __name__ == "__main__":
-    from qiskit import QuantumRegister, QuantumCircuit
-    import warnings
+# if __name__ == "__main__":
+#     from qiskit import QuantumRegister, QuantumCircuit
+#     import warnings
 
-    warnings.filterwarnings("ignore")
-    input = QuantumRegister(3, "in")
-    aux = QuantumRegister(1, "aux")
-    circ = QuantumCircuit(input, aux)
-    # ExtendGate.cnx(circ,input,aux,3)
-    # circ.barrier()
-    ExtendGate.cnz(circ, input, aux, 3)
-    print(circ)
+#     warnings.filterwarnings("ignore")
+#     input = QuantumRegister(3, "in")
+#     aux = QuantumRegister(1, "aux")
+#     circ = QuantumCircuit(input, aux)
+#     # ExtendGate.cnx(circ,input,aux,3)
+#     # circ.barrier()
+#     ExtendGate.cnz(circ, input, aux, 3)
+#     print(circ)

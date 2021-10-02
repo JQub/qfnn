@@ -114,7 +114,7 @@ class LinnerCircuit(BaseCircuit):
         #     sys.exit(0)
         return aux
 
-    def add_input_qubits(self, circuit):
+    def add_input_qubits(self, circuit,name = "linner_layer"):
         """
         Function add_input_qubits is to add a group of qubits as input qubit .
 
@@ -124,7 +124,7 @@ class LinnerCircuit(BaseCircuit):
              qubits: The register of qubits
 
         """
-        inputs = BaseCircuit.add_input_qubits(self, circuit, "u_layer")
+        inputs = BaseCircuit.add_input_qubits(self, circuit, name)
         return inputs
 
     def add_out_qubits(self, circuit):
@@ -140,9 +140,8 @@ class LinnerCircuit(BaseCircuit):
         out_qubits = self.add_qubits(circuit, "u_layer_output_qbit", self.n_repeats)
         return out_qubits
 
-    @abc.abstractclassmethod
+    #@abc.abstractclassmethod
     def extract_from_weight(weight):
-
         pass
 
     def add_weight(self, circuit, weight, in_qubits, data_matrix=None, aux=[]):
@@ -165,8 +164,10 @@ class LinnerCircuit(BaseCircuit):
                 z_count = gate.count("1")
                 # z_pos = get_index_list(gate,"1")
                 z_pos = self.get_index_list(gate[::-1], "1")
-
-                if z_count == 1:
+                # print("z_count= ",z_count)
+                if z_count == 0:
+                    continue
+                elif z_count == 1:
                     circuit.z(qbits[z_pos[0]])
                 elif z_count == 2:
                     circuit.cz(qbits[z_pos[0]], qbits[z_pos[1]])
