@@ -70,16 +70,16 @@ class P_LYR_Circ(LinnerCircuit):
                 #add weight
                 operate_qubits = []
                 aux_qubits = []
-                expection_num = round(self.n_log)
+                encoding_num = round(self.n_log)
                 operate_qubits.append(in_qubits[self.n_qubits-1])
-                for k in range(expection_num):
+                for k in range(encoding_num):
                     operate_qubits.append(aux[k])
-                for k in range(expection_num):
-                    aux_qubits.append(aux[expection_num+k])
+                for k in range(encoding_num):
+                    aux_qubits.append(aux[encoding_num+k])
                 circuit.h(operate_qubits[1:])
                 for j in range(self.n_qubits):
                     operate_qubits[0]=in_qubits[self.n_qubits-1-j]
-                    state = "{0:b}".format(self.n_qubits+j).zfill(expection_num)
+                    state = "{0:b}".format(self.n_qubits+j).zfill(encoding_num)
                     state = state[::-1]
                     ExtendGate.neg_weight_gate(circuit,operate_qubits,aux_qubits,state)
                     circuit.barrier()
@@ -89,18 +89,18 @@ class P_LYR_Circ(LinnerCircuit):
                 circuit.x(operate_qubits[1:])
 
 
-                qbits = in_qubits
-                if expection_num == 2:
+                qbits = operate_qubits[1:]
+                if encoding_num == 2:
                     circuit.ccx(qbits[0], qbits[1], out_qubits[i])
                 else:
                     operate_qubits2 = []
                     aux_qubits2 = []
-                    for k in range(expection_num):
+                    for k in range(encoding_num):
                         operate_qubits2.append(qbits[k])
-                        if k < expection_num - 2:
+                        if k < encoding_num - 2:
                             aux_qubits2.append(aux_qubits[k])
                     operate_qubits2.append(out_qubits[i])
-                    ExtendGate.cnx(circuit, operate_qubits2, aux_qubits2, expection_num+1)
+                    ExtendGate.cnx(circuit, operate_qubits2, aux_qubits2, encoding_num+1)
 
             # recover
             for idx in range(weight[i].flatten().size()[0]):
@@ -151,16 +151,16 @@ class P_Neuron_Circ(P_LYR_Circ):
                 #add weight
                 operate_qubits = []
                 aux_qubits = []
-                expection_num = round(self.n_log)
+                encoding_num = round(self.n_log)
                 operate_qubits.append(in_qubits[self.n_qubits-1])
-                for k in range(expection_num):
+                for k in range(encoding_num):
                     operate_qubits.append(aux[k])
-                for k in range(expection_num):
-                    aux_qubits.append(aux[expection_num+k])
+                for k in range(encoding_num):
+                    aux_qubits.append(aux[encoding_num+k])
                 circuit.h(operate_qubits[1:])
                 for j in range(self.n_qubits):
                     operate_qubits[0]=in_qubits[self.n_qubits-1-j]
-                    state = "{0:b}".format(self.n_qubits+j).zfill(expection_num)
+                    state = "{0:b}".format(self.n_qubits+j).zfill(encoding_num)
                     state = state[::-1]
                     ExtendGate.neg_weight_gate(circuit,operate_qubits,aux_qubits,state)
                     circuit.barrier()
@@ -170,15 +170,15 @@ class P_Neuron_Circ(P_LYR_Circ):
                 circuit.x(operate_qubits[1:])
 
 
-                qbits = in_qubits
-                if expection_num == 2:
+                qbits = operate_qubits[1:]
+                if encoding_num == 2:
                     circuit.ccx(qbits[0], qbits[1], out_qubits[i])
                 else:
                     operate_qubits2 = []
                     aux_qubits2 = []
-                    for k in range(expection_num):
+                    for k in range(encoding_num):
                         operate_qubits2.append(qbits[k])
-                        if k < expection_num - 2:
+                        if k < encoding_num - 2:
                             aux_qubits2.append(aux_qubits[k])
                     operate_qubits2.append(out_qubits[i])
-                    ExtendGate.cnx(circuit, operate_qubits2, aux_qubits2, expection_num+1)
+                    ExtendGate.cnx(circuit, operate_qubits2, aux_qubits2, encoding_num+1)
