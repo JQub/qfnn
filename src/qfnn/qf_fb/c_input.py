@@ -125,13 +125,13 @@ def load_data(interest_num, datapath, isppd, img_size, batch_size, inference_bat
 
 
 def to_quantum_matrix(tensor):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    data = tensor.to(device)
-    input_vec = data.view(-1)
-    vec_len = input_vec.size()[0]
-    input_matrix = torch.zeros(vec_len, vec_len)
-    input_matrix[0] = input_vec
-    input_matrix = np.float64(input_matrix.transpose(0, 1))
-    u, s, v = np.linalg.svd(input_matrix)
-    output_matrix = torch.tensor(np.dot(u, v), dtype=torch.float64)
-    return output_matrix
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        data = tensor.to(device)
+        input_vec = data.view(-1)
+        vec_len = input_vec.size()[0]
+        input_matrix = torch.zeros(vec_len, vec_len)
+        input_matrix[0] = input_vec
+        input_matrix = np.float64(input_matrix.transpose(0,1))
+        u, s, v = np.linalg.svd(input_matrix)
+        output_matrix = torch.tensor(np.dot(u, v), dtype=torch.float64)
+        return output_matrix 

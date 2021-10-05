@@ -23,8 +23,8 @@ class V_LYR_Circ(BaseCircuit):
 
 
 
-    def add_input_qubits(self,circuit):
-        inps = BaseCircuit.add_input_qubits(self,circuit,"vqc_input")
+    def add_input_qubits(self,circuit,name="vqc_input"):
+        inps = BaseCircuit.add_input_qubits(self,circuit,name)
         return inps
 
 

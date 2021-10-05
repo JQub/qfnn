@@ -86,6 +86,7 @@ def tensor_sqrt(x):
 
 def amp2prop(state):
     state = state.double()
+    state = state * state
     n_qubits = int(math.log2(state.shape[0]))
     sum_mat = torch.tensor(qf_sum(n_qubits), dtype=torch.float64)
     sum_mat = sum_mat.t()

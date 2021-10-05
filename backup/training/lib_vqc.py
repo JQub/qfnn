@@ -290,7 +290,7 @@ class VQC_Net(nn.Module):
         
         x = x.t().to(torch.cdouble)
         if  x.shape[0]!= int(math.pow(2,self.num_qubit)):
-            print("Not support VQC input size :",x.shape)
+            print("Not support VQC input size :",x.shape,"num_qubit:",self.num_qubit)
             sys.exit(0)
         
         if self.output_num > int(math.pow(2,self.num_qubit)):
