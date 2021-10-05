@@ -1,8 +1,11 @@
 from .utils import *
 
-class batch_adj(nn.Module):
+
+
+
+class indiv_adj(nn.Module):
     def __init__(self, num_features, init_ang_inc=1, momentum=0.1,training = False):
-        super(batch_adj, self).__init__()
+        super(indiv_adj, self).__init__()
 
         self.x_running_rot = Parameter(torch.zeros((num_features)), requires_grad=False)
         # self.ang_inc = Parameter(torch.ones(1)*init_ang_inc)
@@ -51,9 +54,9 @@ class batch_adj(nn.Module):
         self.ang_inc.data.zeros_()
 
 
-class indiv_adj(nn.Module):
+class batch_adj(nn.Module):
     def __init__(self, num_features, momentum=0.1):
-        super(indiv_adj, self).__init__()
+        super(batch_adj, self).__init__()
         self.x_running_rot = Parameter(torch.zeros(num_features), requires_grad=False)
         self.momentum = momentum
         self.x_l_0_5 = Parameter(torch.zeros(num_features), requires_grad=False)
@@ -82,3 +85,13 @@ class indiv_adj(nn.Module):
             x_1 += self.x_g_0_5 * (y * x)
 
         return x_1
+
+class N_LYR(nn.Module):
+    def __init__(self, num_features, init_ang_inc=1, momentum=0.1,training = False):
+        super(N_LYR, self).__init__()
+        self.inv = indiv_adj(num_features, init_ang_inc, momentum,training)
+        self.batch = batch_adj(num_features,momentum)
+    def forward(self, x, training=True):
+        x = self.batch(x,training)
+        x = self.inv(x,training)
+        return x

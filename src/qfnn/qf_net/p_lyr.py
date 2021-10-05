@@ -31,7 +31,7 @@ class P_LYR(nn.Linear):
 
         return (sum_of_sq + 2 * sum_of_cross) / (length ** 2)
 
-    def forward(self, input):
+    def forward(self, input, training=True):
         binary_weight = binarize(self.weight)
         if self.bias is None:
             # print(input,binary_weight,self.do_slp_via_th(input, binary_weight))

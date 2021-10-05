@@ -2,7 +2,7 @@ from .utils import *
 
 class B_LYR(nn.Linear):
 
-    def forward(self, input):
+    def forward(self, input, training=True):
         binary_weight = binarize(self.weight)
         if self.bias is None:
             output = F.linear(input, binary_weight)

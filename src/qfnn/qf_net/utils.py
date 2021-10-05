@@ -81,7 +81,7 @@ def tensor_squire(x):
 
 
 def tensor_sqrt(x):
-    return torch.sqrt(x + 1e-6)
+    return torch.sqrt(x + 1e-8)
 
 
 def amp2prop(state):
@@ -95,7 +95,7 @@ def amp2prop(state):
 
 
 class Prob2amp():
-    def __call__(self, state):
+    def __call__(self, state,training=False):
         state = state.double().t()
         n_qubits = state.shape[0]
         mstate = torch.ones(int(math.pow(2, n_qubits)), state.shape[1], dtype=torch.float64)
@@ -111,6 +111,7 @@ class Prob2amp():
                                     torch.index_select(state, 0, torch.tensor([j]))).squeeze()
                     mstate = set_value(mstate, i, range(state.shape[1]), val)
         mstate = tensor_sqrt(mstate)
+        print(mstate.t())
         return mstate.t()
 
 

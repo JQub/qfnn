@@ -285,7 +285,7 @@ class VQC_Net(nn.Module):
 
         # init  VClassicCircuitMatrix
 
-    def forward(self, x):
+    def forward(self, x, training=True):
 
         x = x.t().to(torch.cdouble)
         if x.shape[0] != int(math.pow(2, self.num_qubit)):

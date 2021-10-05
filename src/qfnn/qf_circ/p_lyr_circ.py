@@ -39,7 +39,7 @@ class P_LYR_Circ(LinnerCircuit):
         else:
             # q_num = round(self.n_log) + 1
             # aux_num = q_num -1
-            aux = self.add_qubits(circuit,name , round(self.n_log)*2)
+            aux = self.add_qubits(circuit,name , round(self.n_log)*(1+self.n_repeats))
         # else:
         #     print('The input size is too big. Qubits should be less than 4.')
         #     sys.exit(0)
@@ -73,9 +73,9 @@ class P_LYR_Circ(LinnerCircuit):
                 encoding_num = round(self.n_log)
                 operate_qubits.append(in_qubits[self.n_qubits-1])
                 for k in range(encoding_num):
-                    operate_qubits.append(aux[k])
+                    operate_qubits.append(aux[k+encoding_num*i])
                 for k in range(encoding_num):
-                    aux_qubits.append(aux[encoding_num+k])
+                    aux_qubits.append(aux[encoding_num+encoding_num*i+k])
                 circuit.h(operate_qubits[1:])
                 for j in range(self.n_qubits):
                     operate_qubits[0]=in_qubits[self.n_qubits-1-j]

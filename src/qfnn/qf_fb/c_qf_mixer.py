@@ -6,7 +6,7 @@ from ..qf_net.b_lyr import *
 
 ## Define the NN architecture
 class Net(nn.Module):
-    def __init__(self,img_size,layers,training,binary,given_ang=[],train_ang=[],debug="False"):
+    def __init__(self,img_size,layers,training,binary,given_ang=[],train_ang=False,debug="False"):
         super(Net, self).__init__()
 
         self.in_size = img_size*img_size
@@ -35,8 +35,7 @@ class Net(nn.Module):
             elif layers[idx][0]=='v5':
                 setattr(self, fc_name, VQC_Net(loop_in_size, layers[idx][1],'vqc_5'))
             elif layers[idx][0]=='n':
-                setattr(self, fc_name, batch_adj(num_features=layers[idx][1], init_ang_inc=given_ang[idx], training=train_ang))
-                setattr(self, fc_name, indiv_adj(num_features=layers[idx][1]))
+                setattr(self, fc_name, N_LYR(num_features=layers[idx][1], init_ang_inc=given_ang[idx], training=train_ang))
             else:
                 print("Not support layer name!")
                 sys.exit(0)
@@ -48,7 +47,7 @@ class Net(nn.Module):
         for layer_idx in range(self.layer):
             if self.binary and layer_idx==0:
                 x = (binarize(x - 0.5) + 1) / 2
-            x = getattr(self, "fc" + str(layer_idx))(x)
+            x = getattr(self, "fc" + str(layer_idx))(x,training)
 
         if self.layers[-1][1] == 1:
             x = torch.cat((x, 1 - x), -1)

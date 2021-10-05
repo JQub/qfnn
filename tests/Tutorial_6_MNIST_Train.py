@@ -8,6 +8,8 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.append('../')
+sys.path.append('.')
+
 from src.qfnn.qf_fb.c_input import load_data,modify_target
 from src.qfnn.qf_net.utils import binarize,save_checkpoint
 from src.qfnn.qf_fb.c_qf_mixer import Net
@@ -34,7 +36,7 @@ def parse_args():
     parser.add_argument('-j','--num_workers', default="0", help="worker to load data", )
     parser.add_argument('-tb','--batch_size', default="32", help="training batch size", )
     parser.add_argument('-ib','--inference_batch_size', default="1", help="inference batch size", )
-    parser.add_argument('-nn','--neural_in_layers', default="u:4,p:2", help="QNN structrue :<layer1 name: output_number;layer2 name:output_number...>", )
+    parser.add_argument('-nn','--neural_in_layers', default="u:2,p:2,n:2", help="QNN structrue :<layer1 name: output_number;layer2 name:output_number...>", )
 
     parser.add_argument('-l','--init_lr', default="0.01", help="PNN learning rate", )
     parser.add_argument('-m','--milestones', default=" 5, 7, 9", help="Training milestone", )
@@ -45,13 +47,13 @@ def parse_args():
 
     # QC related
     #parser.add_argument('-wn', "--with_norm", default=False ,help="Using Batchnorm", action="store_true", )
-    parser.add_argument('-qa',"--given_ang", default="1 -1 1 -1, -1 -1",  help="ang amplify, the same size with --neural_in_layers",)
-    parser.add_argument('-qt',"--train_ang", help="train anglee", action="store_true", )
+    parser.add_argument('-qa',"--given_ang", default=" 1, 1, 1 1",  help="ang amplify, the same size with --neural_in_layers",)
+    parser.add_argument('-qt',"--train_ang",default=True , help="train anglee", action="store_true", )
 
 
     # File
     parser.add_argument('-chk',"--save_chkp",default=True , help="Save checkpoints", action="store_true", )
-    parser.add_argument('-chkname', '--chk_name', default='u4_p2', help='folder name for chkpoint')
+    parser.add_argument('-chkname', '--chk_name', default='u2_p2_n2', help='folder name for chkpoint')
     parser.add_argument('-chkpath', '--chk_path', default='.', help='Root folder for chkpoint')
 
     args = parser.parse_args()

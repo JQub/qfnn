@@ -3,7 +3,7 @@ from .utils import *
 # u-layer
 class U_LYR(nn.Linear):
 
-    def forward(self, input):
+    def forward(self, input, training=True):
         binary_weight = binarize(self.weight)
         if self.bias is None:
             # print(binary_weight)
