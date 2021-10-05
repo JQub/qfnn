@@ -15,8 +15,8 @@
 	resume_path                              
 	test_only                 0              
 	binary                    0              
-	given_ang                 1 -1 1 -1, -1 -1
-	train_ang                 0              
+	given_ang                  1, 1, 1 1     
+	train_ang                 1              
 	save_chkp                 1              
 	chk_name                  u4_v2          
 	chk_path                  .              

@@ -104,14 +104,15 @@ class Prob2amp():
             for j in range(sum_mat.shape[1]):
                 if int(sum_mat[i][j]) == 0:
                     val = torch.mul(torch.index_select(mstate, 0, torch.tensor([i])),
-                                    1 - torch.index_select(state, 0, torch.tensor([j]))).squeeze()
+                                    1 - torch.index_select(state, 0, torch.tensor([n_qubits-1-j]))).squeeze()
                     mstate = set_value(mstate, i, range(state.shape[1]), val)
                 elif int(sum_mat[i][j]) == 1:
                     val = torch.mul(torch.index_select(mstate, 0, torch.tensor([i])),
-                                    torch.index_select(state, 0, torch.tensor([j]))).squeeze()
+                                    torch.index_select(state, 0, torch.tensor([n_qubits-1-j]))).squeeze()
                     mstate = set_value(mstate, i, range(state.shape[1]), val)
+
+        # print(mstate.t())
         mstate = tensor_sqrt(mstate)
-        print(mstate.t())
         return mstate.t()
 
 
