@@ -1,4 +1,4 @@
-from math import log2
+from math import log2,sqrt,asin
 from .base import *
 from .gates import ExtendGate 
 # just for temp
@@ -123,10 +123,10 @@ class P_Neuron_Circ(P_LYR_Circ):
         P_LYR_Circ.__init__(self,n_qubits,self.n_repeats)
 
 
-    def forward(self, circuit, weight, in_qubits, out_qubits,ang=[],aux = []):
+    def forward(self, circuit, weight, in_qubits, out_qubits,aux = [], input=[]):
         print(in_qubits)
         for i in range (self.n_qubits):
-            circuit.ry(ang[i], in_qubits[i])
+            circuit.ry(2*asin(sqrt(input[i])), in_qubits[i])
 
         for i in range(self.n_repeats):
             # mul weight
