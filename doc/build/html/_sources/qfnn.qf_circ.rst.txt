@@ -13,6 +13,7 @@ Submodules
    qfnn.qf_circ.n_lyr_circ
    qfnn.qf_circ.p_lyr_circ
    qfnn.qf_circ.u_lyr_circ
+   qfnn.qf_circ.v_lyr_circ
 
 Module contents
 ---------------
