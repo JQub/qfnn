@@ -37,8 +37,63 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="qfnn-qf-net-p-lyr-module">
-<h1>qfnn.qf_net.p_lyr module<a class="headerlink" href="#qfnn-qf-net-p-lyr-module" title="Permalink to this headline">¶</a></h1>
+  <section id="module-qfnn.qf_net.p_lyr">
+<span id="qfnn-qf-net-p-lyr-module"></span><h1>qfnn.qf_net.p_lyr module<a class="headerlink" href="#module-qfnn.qf_net.p_lyr" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.p_lyr.</span></span><span class="sig-name descname"><span class="pre">P_LYR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_features</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.linear.Linear</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR.do_slp_via_th">
+<span class="sig-name descname"><span class="pre">do_slp_via_th</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ori</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_ori</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR.do_slp_via_th" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR.in_features">
+<span class="sig-name descname"><span class="pre">in_features</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR.in_features" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR.out_features">
+<span class="sig-name descname"><span class="pre">out_features</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR.out_features" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR.reset_parameters">
+<span class="sig-name descname"><span class="pre">reset_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR.reset_parameters" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.P_LYR.weight">
+<span class="sig-name descname"><span class="pre">weight</span></span><em class="property"><span class="pre">:</span> <span class="pre">torch.Tensor</span></em><a class="headerlink" href="#qfnn.qf_net.p_lyr.P_LYR.weight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.binarize">
+<span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.p_lyr.</span></span><span class="sig-name descname"><span class="pre">binarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.p_lyr.binarize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qfnn.qf_net.p_lyr.clipfunc">
+<span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.p_lyr.</span></span><span class="sig-name descname"><span class="pre">clipfunc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.p_lyr.clipfunc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
 
 
@@ -59,7 +114,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -84,7 +139,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, JQub.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
   </body>
 </html>

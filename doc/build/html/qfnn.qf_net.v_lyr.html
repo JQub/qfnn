@@ -37,8 +37,124 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="qfnn-qf-net-v-lyr-module">
-<h1>qfnn.qf_net.v_lyr module<a class="headerlink" href="#qfnn-qf-net-v-lyr-module" title="Permalink to this headline">¶</a></h1>
+  <section id="module-qfnn.qf_net.v_lyr">
+<span id="qfnn-qf-net-v-lyr-module"></span><h1>qfnn.qf_net.v_lyr module<a class="headerlink" href="#module-qfnn.qf_net.v_lyr" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.v_lyr.</span></span><span class="sig-name descname"><span class="pre">VClassicCircuitMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_qubits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ctrl_rx_matrix">
+<span class="sig-name descname"><span class="pre">get_ctrl_rx_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ctrl_rx_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ctrl_ry_matrix">
+<span class="sig-name descname"><span class="pre">get_ctrl_ry_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ctrl_ry_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ctrl_rz_matrix">
+<span class="sig-name descname"><span class="pre">get_ctrl_rz_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ctrl_rz_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_parameter_number">
+<span class="sig-name descname"><span class="pre">get_parameter_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vqc_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_parameter_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_rx_matrix">
+<span class="sig-name descname"><span class="pre">get_rx_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_rx_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ry_matrix">
+<span class="sig-name descname"><span class="pre">get_ry_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_ry_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_rz_matrix">
+<span class="sig-name descname"><span class="pre">get_rz_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.get_rz_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_c_r">
+<span class="sig-name descname"><span class="pre">qf_c_r</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index_r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_c_r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_cz">
+<span class="sig-name descname"><span class="pre">qf_cz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_cz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_rx">
+<span class="sig-name descname"><span class="pre">qf_rx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_rx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_ry">
+<span class="sig-name descname"><span class="pre">qf_ry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_ry" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_rz">
+<span class="sig-name descname"><span class="pre">qf_rz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_rz" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_swap_dec">
+<span class="sig-name descname"><span class="pre">qf_swap_dec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.qf_swap_dec" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.vqc_10">
+<span class="sig-name descname"><span class="pre">vqc_10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.vqc_10" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VClassicCircuitMatrix.vqc_5">
+<span class="sig-name descname"><span class="pre">vqc_5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thetas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VClassicCircuitMatrix.vqc_5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VQC_Net">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.v_lyr.</span></span><span class="sig-name descname"><span class="pre">VQC_Net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vqc_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vqc_10'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VQC_Net" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VQC_Net.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.VQC_Net.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.VQC_Net.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="headerlink" href="#qfnn.qf_net.v_lyr.VQC_Net.training" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.binarize">
+<span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.v_lyr.</span></span><span class="sig-name descname"><span class="pre">binarize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.binarize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="qfnn.qf_net.v_lyr.clipfunc">
+<span class="sig-prename descclassname"><span class="pre">qfnn.qf_net.v_lyr.</span></span><span class="sig-name descname"><span class="pre">clipfunc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_net.v_lyr.clipfunc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
 
 
@@ -59,7 +175,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -84,7 +200,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, JQub.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
     </div>
   </body>
 </html>
