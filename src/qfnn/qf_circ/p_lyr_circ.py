@@ -34,6 +34,7 @@ class P_LYR_Circ(LinnerCircuit):
 
         Args:
              circuit: The  circuit that you add the unit at the end
+
         Returns:
              qubits: The register of qubits
 
@@ -61,6 +62,7 @@ class P_LYR_Circ(LinnerCircuit):
              in_qubits: The register of input qubits
              out_qubit: The register of output qubits
              aux: aux qubits
+
         """
         for i in range(self.n_repeats):
             # mul weight
@@ -150,6 +152,7 @@ class P_Neuron_Circ(P_LYR_Circ):
              out_qubit: The register of output qubits
              ang: the angle list of angle encoding
              aux: aux qubits
+
         """
         for i in range (self.n_qubits):
             if len(ang)>i:

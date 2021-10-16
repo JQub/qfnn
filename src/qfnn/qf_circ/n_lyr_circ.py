@@ -34,6 +34,7 @@ class N_LYR_Circ(BaseCircuit):
              out_qubits: The register of output qubits
              norm_flag: the direction of batch normalization.
              norm_para: the parameter of batch normalization  encoded in the angle of qubits.
+
         """
         for i in range(self.n_qubits):
             norm_init_rad = float(norm_para[i].sqrt().arcsin() * 2)

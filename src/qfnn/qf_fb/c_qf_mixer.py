@@ -7,11 +7,11 @@ from ..qf_net.b_lyr import *
 ## Define the NN architecture
 class Net(nn.Module):
     """
-    class Net is to simply build up a network consisting of quantum layers ,using mat to represent the quantum gate..
+    class Net is to simply build up a network consisting of quantum layers ,using mat to represent the quantum gate.
+
     Args:
          img_size: the width /height of input image (width = height)
-         layers: a 2-dimensions list. for example,[['u',4]['p',2]] means that the first layer is u-layer with 4 output qubit,
-                 and the second layer is p-layer with 2 output qubit
+         layers: a 2-dimensions list. for example,[['u',4]['p',2]] means that the first layer is u-layer with 4 output qubit, and the second layer is p-layer with 2 output qubit
          training: whether  training
          binary: whether the input data should be binarized
          given_ang: initial angle for N-layer if used

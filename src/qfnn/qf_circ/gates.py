@@ -199,13 +199,14 @@ class ExtendGate():
     @classmethod
     def neg_weight_gate(cls, circ, qubits, aux, state):
         """
-        Function neg_weight_gate : adding NOT(X) gate before the qubits associated with 0 state. For example, if we want to flip
-    #   the sign of |1101>, we add X gate for q2 beforethe cccz gate, as follows.
+        Function neg_weight_gate : adding NOT(X) gate before the qubits associated with 0 state. For example, if we want to flip the sign of |1101>, we add X gate for q2 beforethe cccz gate, as follows.
+
         Args:
              circ: quantum circuit
              qubits: the register of input qubits
              aux: auxiliary qubits
              state: a  string that represents the state of the qubits,such as '1101'
+
         """
         idx = 0
         # The index of qubits are reversed in terms of states.

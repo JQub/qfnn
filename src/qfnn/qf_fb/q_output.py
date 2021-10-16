@@ -19,11 +19,13 @@ def auth_output():
 def fire_ibmq(circuit, shots, Simulation=True, backend_name='ibmq_essex'):
     """
     class fire_ibmq is used for execute quantum circuit using simulation or ibm quantum processor
+
     Args:
          circuit: quantum circuit
          shots: number of shots
          Simulation: simulation or quantum processor
          backend_name: backend name if quantum processor
+
     Returns:
          counts: quantum execute results, including different states with shots
     """
@@ -47,8 +49,10 @@ def fire_ibmq(circuit, shots, Simulation=True, backend_name='ibmq_essex'):
 def get_unitary(circuit, IBMQ=None):
     """
     Function get_unitary is used for execute quantum circuit using simulation to get the unitary matrix that represents the circuit
+
     Args:
          circuit: quantum circuit
+
     Returns:
          unitary: unitary matrix
     """
@@ -67,6 +71,7 @@ def get_unitary(circuit, IBMQ=None):
 def add_measure(circuit, qubits, name):
     """
     Function add_measure is used for add the measure gate to the qubits
+
     Args:
          circuit: quantum circuit
          qubits: input quantum registers
@@ -88,11 +93,13 @@ def analyze(counts):
     """
     Function analyze is used for analyze the count on states to
        formulate the probability for each qubit
+    
     Args:
          counts: : quantum execute results, including different states with shots
-    return:
-    mycount:  shots of the state '1' for each qubit
-    bits: the number of qubits
+
+    Returns:
+         mycount:  shots of the state '1' for each qubit
+         bits: the number of qubits
     """
     mycount = {}
     for i in range(2):

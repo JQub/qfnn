@@ -105,6 +105,7 @@ class ToQuantumData(object):
 def load_data(interest_num, datapath, isppd, img_size, batch_size, inference_batch_size, is_to_q=True, num_workers=0):
     """
     Function load_data is to get the DataLoader of MNIST after preprocessing with the interest nums.
+
     Args:
          interest_num: the specfic label list,such as [3,6]
          datapath: the path of MNIST data
@@ -114,6 +115,7 @@ def load_data(interest_num, datapath, isppd, img_size, batch_size, inference_bat
          inference_batch_size: batch size while inferencing
          is_to_q: whether the output data in loader is to be encoded in quantum unitary matrix
          num_workers: for torch.utils.data.DataLoader.
+
     Returns:
         train_loader: a torch.utils.data.DataLoader for training.
         test_loader: a torch.utils.data.DataLoader for testing.
