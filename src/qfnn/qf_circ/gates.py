@@ -68,11 +68,13 @@ class ExtendGate():
     def cccz(cls, circ, q1, q2, q3, q4, aux1, aux2):
         """
         Function cccx : using the basic Toffoli gates and CZ gate to implement cccz gate
+
         Args:
              circ: quantum circuit
              q1,q2,q3: control qubits
              q4: target qubits :
              aux1,aux2: auxiliary qubits
+
         Returns:
              circ:  the circuit you add the gate to
 
@@ -90,6 +92,7 @@ class ExtendGate():
     def cnz(cls, circ, q, aux, q_num):
         """
         Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cz gate,which includes n control gates.
+
         Args:
              circ: quantum circuit
              q:  qubits list. The last is target qubits
@@ -122,6 +125,7 @@ class ExtendGate():
     def cnx(cls, circ, q, aux, q_num):
         """
         Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cx gate,which includes n control gates.
+
         Args:
              circ: quantum circuit
              q:  qubits list. The last is target qubits
@@ -164,11 +168,13 @@ class ExtendGate():
     def ccccx(cls, circ, q1, q2, q3, q4, q5, aux1, aux2):
         """
         Function cccx : using the basic Toffoli gates and CX,CCX gate to implement ccccx gate
+
         Args:
              circ: quantum circuit
              q1,q2,q3,q4: control qubits
              q5: target qubits :
              aux1,aux2: auxiliary qubits
+
         Returns:
              circ:  the circuit you add the gate to
 
