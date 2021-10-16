@@ -14,6 +14,19 @@ class ExtendGate():
     ######################################################
     @classmethod
     def ccz(cls, circ, q1, q2, q3, aux1):
+        """
+        Function ccz : using the basic Toffoli gates and CZ gate to implement ccz gate, which will flip the sign of state |111>
+
+        Args:
+             circ: quantum circuit
+             q1,q2: control qubits
+             q3: target qubits :
+             aux1: auxiliary qubits
+        Returns:
+             circ:  the circuit you add the gate to
+
+        """
+
         # Apply Z-gate to a state controlled by 3 qubits
         circ.ccx(q1, q2, aux1)
         circ.cz(aux1, q3)
@@ -23,6 +36,17 @@ class ExtendGate():
 
     @classmethod
     def cccx(cls, circ, q1, q2, q3, q4, aux1):
+        """
+        Function cccx : using the basic Toffoli gates and CX gate to implement cccx gate
+        Args:
+             circ: quantum circuit
+             q1,q2,q3: control qubits
+             q4: target qubits :
+             aux1: auxiliary qubits
+        Returns:
+             circ:  the circuit you add the gate to
+
+        """
         # Apply Z-gate to a state controlled by 3 qubits
         circ.ccx(q1, q2, aux1)
         circ.ccx(q3, aux1, q4)
@@ -42,6 +66,17 @@ class ExtendGate():
     ######################################################
     @classmethod
     def cccz(cls, circ, q1, q2, q3, q4, aux1, aux2):
+        """
+        Function cccx : using the basic Toffoli gates and CZ gate to implement cccz gate
+        Args:
+             circ: quantum circuit
+             q1,q2,q3: control qubits
+             q4: target qubits :
+             aux1,aux2: auxiliary qubits
+        Returns:
+             circ:  the circuit you add the gate to
+
+        """
         # Apply Z-gate to a state controlled by 4 qubits
         circ.ccx(q1, q2, aux1)
         circ.ccx(q3, aux1, aux2)
@@ -53,6 +88,15 @@ class ExtendGate():
 
     @classmethod
     def cnz(cls, circ, q, aux, q_num):
+        """
+        Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cz gate,which includes n control gates.
+        Args:
+             circ: quantum circuit
+             q:  qubits list. The last is target qubits
+             aux: auxiliary qubits
+             q_num: the number of qubits in q.
+        """
+
         if q_num<=2:
             print("Please use cz instead of cnz!")
             sys.exit(0)
@@ -76,6 +120,15 @@ class ExtendGate():
 
     @classmethod
     def cnx(cls, circ, q, aux, q_num):
+        """
+        Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cx gate,which includes n control gates.
+        Args:
+             circ: quantum circuit
+             q:  qubits list. The last is target qubits
+             aux: auxiliary qubits
+             q_num: the number of qubits in q.
+        """
+
         if q_num <= 3:
             print("Please use ccx instead of cnx!")
             sys.exit(0)
@@ -109,6 +162,17 @@ class ExtendGate():
     ######################################################
     @classmethod
     def ccccx(cls, circ, q1, q2, q3, q4, q5, aux1, aux2):
+        """
+        Function cccx : using the basic Toffoli gates and CX,CCX gate to implement ccccx gate
+        Args:
+             circ: quantum circuit
+             q1,q2,q3,q4: control qubits
+             q5: target qubits :
+             aux1,aux2: auxiliary qubits
+        Returns:
+             circ:  the circuit you add the gate to
+
+        """
         circ.ccx(q1, q2, aux1)
         circ.ccx(q3, q4, aux2)
         circ.ccx(aux2, aux1, q5)
@@ -134,6 +198,15 @@ class ExtendGate():
     ######################################################
     @classmethod
     def neg_weight_gate(cls, circ, qubits, aux, state):
+        """
+        Function neg_weight_gate : adding NOT(X) gate before the qubits associated with 0 state. For example, if we want to flip
+    #   the sign of |1101>, we add X gate for q2 beforethe cccz gate, as follows.
+        Args:
+             circ: quantum circuit
+             qubits: the register of input qubits
+             aux: auxiliary qubits
+             state: a  string that represents the state of the qubits,such as '1101'
+        """
         idx = 0
         # The index of qubits are reversed in terms of states.
         # As shown in the above example: we put X at q2 not the third position.

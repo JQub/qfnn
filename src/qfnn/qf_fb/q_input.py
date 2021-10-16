@@ -2,11 +2,15 @@ from ..qf_circ.base import *
 from qiskit.extensions import UnitaryGate
 
 class UMatrixCircuit(BaseCircuit):
+    """
+    UMatrixCircuit is a class, which encodes unitary matrix into qubits using UnitaryGate
+
+    Args:
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
+
+    """
     def __init__(self,n_qubits,n_repeats):
-        """
-        param n_qubits: input qubits of each unit
-        param n_repeats: repeat times of each unit
-        """
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
 

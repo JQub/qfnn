@@ -2,11 +2,16 @@ from .base import *
 
 
 class N_LYR_Circ(BaseCircuit):
+    """
+    N_LYR_Circ is a class, which includes functions to build N-layer circuit(for batch normalization)
+
+    Args:
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
+
+    """
     def __init__(self, n_qubits, n_repeats=1):
-        """
-        param n_qubits: input qubits of each unit
-        param n_repeats: repeat times of each unit
-        """
+
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
 
@@ -19,6 +24,17 @@ class N_LYR_Circ(BaseCircuit):
         return out_qubits
 
     def forward(self, circuit, input_qubits, norm_qubits, out_qubits, norm_flag, norm_para):
+        """
+        Function forward is to add the circuit of N-layer.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             input_qubits: The register of input qubits
+             norm_qubits: The register of qubits that do angle-encoding.
+             out_qubits: The register of output qubits
+             norm_flag: the direction of batch normalization.
+             norm_para: the parameter of batch normalization  encoded in the angle of qubits.
+        """
         for i in range(self.n_qubits):
             norm_init_rad = float(norm_para[i].sqrt().arcsin() * 2)
             circuit.ry(norm_init_rad, norm_qubits[i])

@@ -12,12 +12,16 @@ import copy
 from .gates import *
 from .base import *
 
-class V_LYR_Circ(BaseCircuit):    
+class V_LYR_Circ(BaseCircuit):
+    """
+    V_LYR_Circ is a class, which includes functions to build v-layer(vqc)
+
+    Args:
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
+
+    """
     def __init__(self, n_qubits,n_repeats):
-        """
-        param n_qubits: input qubits of each unit
-        param n_repeats: repeat times of each unit
-        """    
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
 
@@ -77,6 +81,17 @@ class V_LYR_Circ(BaseCircuit):
 
     
     def forward(self,circuit,input_qubits,vqc_name,thetas):
+        """
+        Function forward is to add the circuit of VQC.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             input_qubits: The register of input qubits
+             vqc_name: The number of vqc architecture in the  paper.
+             thetas: A list of angles to be encoded into  of vqc architecture in the paper.
+             aux: aux qubits
+        """
+
         if vqc_name == 'v10':
             for i in range(self.n_repeats):
                 self.vqc_10(circuit,input_qubits[i],thetas)

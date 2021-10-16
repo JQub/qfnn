@@ -33,6 +33,14 @@ def modify_target(target, interest_num):
 
 
 def select_num(dataset, interest_num):
+    """
+    Function select_num is to select the specfic label of a dataset to generate a sub-dataset.
+    Args:
+         dataset: a pytorch-datasets
+         interest_num: the specfic label list,such as [3,6]
+    Returns:
+        dataset: a sub-dataset
+    """
     labels = dataset.targets  # get labels
     labels = labels.numpy()
     idx = {}
@@ -57,6 +65,7 @@ def select_num(dataset, interest_num):
 
 
 class ToQuantumData_Batch(object):
+
     def __call__(self, tensor):
         data = tensor
         input_vec = data.view(-1)
@@ -71,6 +80,9 @@ class ToQuantumData_Batch(object):
 
 
 class ToQuantumData(object):
+    """
+    class ToQuantumData is to transform the input image into a unitary matrix to be encoded in quantum unitary matrix.
+    """
     def __init__(self, img_size):
         super().__init__()
         self.img_size = img_size
@@ -91,6 +103,21 @@ class ToQuantumData(object):
 
 
 def load_data(interest_num, datapath, isppd, img_size, batch_size, inference_batch_size, is_to_q=True, num_workers=0):
+    """
+    Function load_data is to get the DataLoader of MNIST after preprocessing with the interest nums.
+    Args:
+         interest_num: the specfic label list,such as [3,6]
+         datapath: the path of MNIST data
+         isppd: whether the data is loaded from qfMNIST,whch have done preprocessing
+         img_size: the width /height of input image (width = height)
+         batch_size:  batch size while training
+         inference_batch_size: batch size while inferencing
+         is_to_q: whether the output data in loader is to be encoded in quantum unitary matrix
+         num_workers: for torch.utils.data.DataLoader.
+    Returns:
+        train_loader: a torch.utils.data.DataLoader for training.
+        test_loader: a torch.utils.data.DataLoader for testing.
+    """
     if isppd:
         train_data = qfMNIST(root=datapath, img_size=img_size, train=True)
         test_data = qfMNIST(root=datapath, img_size=img_size, train=False)
@@ -125,13 +152,20 @@ def load_data(interest_num, datapath, isppd, img_size, batch_size, inference_bat
 
 
 def to_quantum_matrix(tensor):
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        data = tensor.to(device)
-        input_vec = data.view(-1)
-        vec_len = input_vec.size()[0]
-        input_matrix = torch.zeros(vec_len, vec_len)
-        input_matrix[0] = input_vec
-        input_matrix = np.float64(input_matrix.transpose(0,1))
-        u, s, v = np.linalg.svd(input_matrix)
-        output_matrix = torch.tensor(np.dot(u, v), dtype=torch.float64)
-        return output_matrix 
+    """
+    Function to_quantum_matrix is to transform the input image into a unitary matrix.
+    Args:
+         tensor: input image
+    Returns:
+        output_matrix: a unitary matrix.
+    """
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    data = tensor.to(device)
+    input_vec = data.view(-1)
+    vec_len = input_vec.size()[0]
+    input_matrix = torch.zeros(vec_len, vec_len)
+    input_matrix[0] = input_vec
+    input_matrix = np.float64(input_matrix.transpose(0,1))
+    u, s, v = np.linalg.svd(input_matrix)
+    output_matrix = torch.tensor(np.dot(u, v), dtype=torch.float64)
+    return output_matrix 

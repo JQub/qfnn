@@ -96,7 +96,7 @@ class LinnerCircuit(BaseCircuit):
 
     def add_aux(self, circuit):
         """
-        Function add  aux qubits is to add a group of qubits as input qubit .
+        Function add_aux  is to add a group of qubits as input qubit .
 
         Args:
              circuit: The  circuit that you add the unit at the end
@@ -129,7 +129,7 @@ class LinnerCircuit(BaseCircuit):
 
     def add_out_qubits(self, circuit):
         """
-        Function add output qubits is to add a group of qubits as input qubit .
+        Function add_out_qubits is to add a group of qubits as input qubit .
 
         Args:
              circuit: The  circuit that you add the unit at the end
@@ -146,7 +146,7 @@ class LinnerCircuit(BaseCircuit):
 
     def add_weight(self, circuit, weight, in_qubits, data_matrix=None, aux=[]):
         """
-        Function add output qubits is to add the circuit of ci=wi*xi.
+        Function add_weight is to add the circuit of ci=wi*xi.
 
         Args:
              circuit: The  circuit that you add the unit at the end
@@ -191,7 +191,7 @@ class LinnerCircuit(BaseCircuit):
 
     def sum2(self, circuit, in_qubits, out_qubit, aux=[]):
         """
-        Function add output qubits is to add the circuit of (∑ci)^2/N.
+        Function sum2 is to add the circuit of (∑ci)^2/N.
 
         Args:
              circuit: The  circuit that you add the unit at the end
@@ -226,7 +226,7 @@ class LinnerCircuit(BaseCircuit):
 
     def forward(self, circuit, weight, in_qubits, out_qubit, data_matrix=None, aux=[]):
         """
-        Function add output qubits is to add the circuit of (∑wi*xi)^2/N.
+        Function forward is to add the circuit of (∑wi*xi)^2/N.
 
         Args:
              circuit: The  circuit that you add the unit at the end

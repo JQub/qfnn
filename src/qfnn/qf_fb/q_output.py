@@ -17,6 +17,17 @@ def auth_output():
 #             (4) backend name if quantum processor.
 ######################################################
 def fire_ibmq(circuit, shots, Simulation=True, backend_name='ibmq_essex'):
+    """
+    class fire_ibmq is used for execute quantum circuit using simulation or ibm quantum processor
+    Args:
+         circuit: quantum circuit
+         shots: number of shots
+         Simulation: simulation or quantum processor
+         backend_name: backend name if quantum processor
+    Returns:
+         counts: quantum execute results, including different states with shots
+    """
+
     if not Simulation:
         provider = IBMQ.get_provider('ibm-q-academic')
         backend = provider.get_backend(backend_name)
@@ -34,6 +45,13 @@ def fire_ibmq(circuit, shots, Simulation=True, backend_name='ibmq_essex'):
 
 
 def get_unitary(circuit, IBMQ=None):
+    """
+    Function get_unitary is used for execute quantum circuit using simulation to get the unitary matrix that represents the circuit
+    Args:
+         circuit: quantum circuit
+    Returns:
+         unitary: unitary matrix
+    """
     if IBMQ == None:
         backend = BasicAer.get_backend('unitary_simulator')
     else:
@@ -47,6 +65,12 @@ def get_unitary(circuit, IBMQ=None):
 
 
 def add_measure(circuit, qubits, name):
+    """
+    Function add_measure is used for add the measure gate to the qubits
+    Args:
+         circuit: quantum circuit
+         qubits: input quantum registers
+    """
     lenth = len(qubits)
     c_reg = ClassicalRegister(lenth, name)
     circuit.add_register(c_reg)
@@ -61,6 +85,15 @@ def add_measure(circuit, qubits, name):
 # Parameters: (1) counts returned by fire_ibmq;
 ######################################################
 def analyze(counts):
+    """
+    Function analyze is used for analyze the count on states to
+       formulate the probability for each qubit
+    Args:
+         counts: : quantum execute results, including different states with shots
+    return:
+    mycount:  shots of the state '1' for each qubit
+    bits: the number of qubits
+    """
     mycount = {}
     for i in range(2):
         mycount[i] = 0

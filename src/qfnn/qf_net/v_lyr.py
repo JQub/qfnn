@@ -268,8 +268,6 @@ class VClassicCircuitMatrix:
             return int(7 * self.n_qubits)
 
 
-# vqc 必须要显式进行p2a
-
 class VQC_Net(nn.Module):
     def __init__(self, input_num, output_num, vqc_name='vqc_10'):
         super(VQC_Net, self).__init__()

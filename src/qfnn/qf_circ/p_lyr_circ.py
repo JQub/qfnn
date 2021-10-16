@@ -3,11 +3,16 @@ from .base import *
 from .gates import ExtendGate 
 # just for temp
 class P_LYR_Circ(LinnerCircuit):
+    """
+    P_LYR_Circ is a class, which includes functions to build p-layer circuit
+
+    Args:
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
+
+    """
     def __init__(self, n_qubits, n_repeats):
-        """
-        param n_qubits: input qubits of each unit
-        param n_repeats: repeat times of each unit
-        """
+
         self.n_qubits = n_qubits
         self.n_repeats = n_repeats
         self.n_log = log2(self.n_qubits)
@@ -25,7 +30,7 @@ class P_LYR_Circ(LinnerCircuit):
 
     def add_aux(self, circuit,name ="aux_qbit"):
         """
-        Function add  aux qubits is to add a group of qubits as input qubit .
+        Function add  add_aux is to add a group of qubits as input qubit .
 
         Args:
              circuit: The  circuit that you add the unit at the end
@@ -47,7 +52,16 @@ class P_LYR_Circ(LinnerCircuit):
 
 
     def forward(self, circuit, weight, in_qubits, out_qubits,aux = []):
+        """
+        Function add forward is to add the circuit of batch normalization.
 
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             weight: A list of binary weight.
+             in_qubits: The register of input qubits
+             out_qubit: The register of output qubits
+             aux: aux qubits
+        """
         for i in range(self.n_repeats):
             # mul weight
             if weight[i].sum() < 0:
@@ -111,12 +125,14 @@ class P_LYR_Circ(LinnerCircuit):
 
 
 class P_Neuron_Circ(P_LYR_Circ):
-    def __init__(self, n_qubits):
-        """
-        param n_qubits: input qubits of each unit
-        param n_repeats: repeat times of each unit
-        """
+    """
+    P_Neuron_Circ is a class, which includes functions to build P-Neuron circuit. P-Layer consists of serverl P-Neuron.A neuron only repeats onece.
 
+    Args:
+         n_qubits: input qubits of each unit
+
+    """
+    def __init__(self, n_qubits):
         self.n_qubits = n_qubits
         self.n_repeats = 1
 
@@ -124,9 +140,20 @@ class P_Neuron_Circ(P_LYR_Circ):
 
 
     def forward(self, circuit, weight, in_qubits, out_qubits,ang=[],aux = []):
-        print(in_qubits)
+        """
+        Function forward is to add the circuit of batch normalization.
+
+        Args:
+             circuit: The  circuit that you add the unit at the end
+             weight: A list of binary weight.
+             in_qubits: The register of input qubits
+             out_qubit: The register of output qubits
+             ang: the angle list of angle encoding
+             aux: aux qubits
+        """
         for i in range (self.n_qubits):
-            circuit.ry(ang[i], in_qubits[i])
+            if len(ang)>i:
+                circuit.ry(ang[i], in_qubits[i])
 
         for i in range(self.n_repeats):
             # mul weight

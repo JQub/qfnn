@@ -1,12 +1,16 @@
 from .base import *
 
 class F_LYR_Circ(LinnerCircuit):
+    """
+    F_LYR_Circ is a class, which includes functions to build F-layer(the former part of FFNN)
 
+    Args:
+         n_qubits: input qubits of each unit
+         n_repeats: repeat times of each unit
+
+    """
     def __init__(self, n_qubits, n_repeats):
-        """
-      param n_qubits: input qubits of each unit
-      param n_repeats: repeat times of each unit
-        """
+
         LinnerCircuit.__init__(self, n_qubits, n_repeats)
 
     @classmethod
@@ -24,6 +28,15 @@ class F_LYR_Circ(LinnerCircuit):
 
     @classmethod
     def extract_from_weight(self, weights):
+        """
+        Function extract_from_weight : transform the weights of the nets into the gates of qubits.
+
+        Args:
+             weights: the weights of nets
+        Returns:
+             gates: The mapped gate list ,such as 0010.
+
+        """
         # Find Z control gates according to weights
         w = (weights.detach().cpu().numpy())
         total_len = len(w)
