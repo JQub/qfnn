@@ -22,7 +22,7 @@ copyright = '2021, JQub'
 author = 'Zhirui Hu & Weiwen Jiang'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.12'
+release = '0.1.17'
 
 
 # -- General configuration ---------------------------------------------------
