@@ -55,22 +55,26 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="qfnn.qf_fb.c_input.load_data">
 <span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interest_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datapath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isppd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inference_batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_to_q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.load_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function load_data is to get the DataLoader of MNIST after preprocessing with the interest nums.
-:param interest_num: the specfic label list,such as [3,6]
-:param datapath: the path of MNIST data
-:param isppd: whether the data is loaded from qfMNIST,whch have done preprocessing
-:param img_size: the width /height of input image (width = height)
-:param batch_size: batch size while training
-:param inference_batch_size: batch size while inferencing
-:param is_to_q: whether the output data in loader is to be encoded in quantum unitary matrix
-:param num_workers: for torch.utils.data.DataLoader.</p>
+<dd><p>Function load_data is to get the DataLoader of MNIST after preprocessing with the interest nums.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a torch.utils.data.DataLoader for training.
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>interest_num</strong> – the specfic label list,such as [3,6]</p></li>
+<li><p><strong>datapath</strong> – the path of MNIST data</p></li>
+<li><p><strong>isppd</strong> – whether the data is loaded from qfMNIST,whch have done preprocessing</p></li>
+<li><p><strong>img_size</strong> – the width /height of input image (width = height)</p></li>
+<li><p><strong>batch_size</strong> – batch size while training</p></li>
+<li><p><strong>inference_batch_size</strong> – batch size while inferencing</p></li>
+<li><p><strong>is_to_q</strong> – whether the output data in loader is to be encoded in quantum unitary matrix</p></li>
+<li><p><strong>num_workers</strong> – for torch.utils.data.DataLoader.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a torch.utils.data.DataLoader for training.
 test_loader: a torch.utils.data.DataLoader for testing.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>train_loader</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>train_loader</p>
 </dd>
 </dl>
 </dd></dl>

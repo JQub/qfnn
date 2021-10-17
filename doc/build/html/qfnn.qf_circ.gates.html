@@ -46,21 +46,25 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.qf_circ.gates.ExtendGate.ccccx">
 <em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">ccccx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.gates.ExtendGate.ccccx" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function cccx : using the basic Toffoli gates and CX,CCX gate to implement ccccx gate
-:param circ: quantum circuit
-:param q1: control qubits
-:param q2: control qubits
-:param q3: control qubits
-:param q4: control qubits
-:param q5: target qubits :
-:param aux1: auxiliary qubits
-:param aux2: auxiliary qubits</p>
+<dd><p>Function cccx : using the basic Toffoli gates and CX,CCX gate to implement ccccx gate</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>the circuit you add the gate to</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circ</strong> – quantum circuit</p></li>
+<li><p><strong>q1</strong> – control qubits</p></li>
+<li><p><strong>q2</strong> – control qubits</p></li>
+<li><p><strong>q3</strong> – control qubits</p></li>
+<li><p><strong>q4</strong> – control qubits</p></li>
+<li><p><strong>q5</strong> – target qubits :</p></li>
+<li><p><strong>aux1</strong> – auxiliary qubits</p></li>
+<li><p><strong>aux2</strong> – auxiliary qubits</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>circ</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the circuit you add the gate to</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>circ</p>
 </dd>
 </dl>
 </dd></dl>
@@ -88,20 +92,24 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.qf_circ.gates.ExtendGate.cccz">
 <em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cccz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.gates.ExtendGate.cccz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function cccx : using the basic Toffoli gates and CZ gate to implement cccz gate
-:param circ: quantum circuit
-:param q1: control qubits
-:param q2: control qubits
-:param q3: control qubits
-:param q4: target qubits :
-:param aux1: auxiliary qubits
-:param aux2: auxiliary qubits</p>
+<dd><p>Function cccx : using the basic Toffoli gates and CZ gate to implement cccz gate</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>the circuit you add the gate to</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circ</strong> – quantum circuit</p></li>
+<li><p><strong>q1</strong> – control qubits</p></li>
+<li><p><strong>q2</strong> – control qubits</p></li>
+<li><p><strong>q3</strong> – control qubits</p></li>
+<li><p><strong>q4</strong> – target qubits :</p></li>
+<li><p><strong>aux1</strong> – auxiliary qubits</p></li>
+<li><p><strong>aux2</strong> – auxiliary qubits</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>circ</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the circuit you add the gate to</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>circ</p>
 </dd>
 </dl>
 </dd></dl>
@@ -132,37 +140,47 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.qf_circ.gates.ExtendGate.cnx">
 <em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cnx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.gates.ExtendGate.cnx" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cx gate,which includes n control gates.
-:param circ: quantum circuit
-:param q: qubits list. The last is target qubits
-:param aux: auxiliary qubits
-:param q_num: the number of qubits in q.</p>
+<dd><p>Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cx gate,which includes n control gates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circ</strong> – quantum circuit</p></li>
+<li><p><strong>q</strong> – qubits list. The last is target qubits</p></li>
+<li><p><strong>aux</strong> – auxiliary qubits</p></li>
+<li><p><strong>q_num</strong> – the number of qubits in q.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.qf_circ.gates.ExtendGate.cnz">
 <em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">cnz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.gates.ExtendGate.cnz" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cz gate,which includes n control gates.
-:param circ: quantum circuit
-:param q: qubits list. The last is target qubits
-:param aux: auxiliary qubits
-:param q_num: the number of qubits in q.</p>
+<dd><p>Function cnz : using the basic Toffoli gates and CZ gate to implement cc..cz gate,which includes n control gates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circ</strong> – quantum circuit</p></li>
+<li><p><strong>q</strong> – qubits list. The last is target qubits</p></li>
+<li><p><strong>aux</strong> – auxiliary qubits</p></li>
+<li><p><strong>q_num</strong> – the number of qubits in q.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="qfnn.qf_circ.gates.ExtendGate.neg_weight_gate">
 <em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">neg_weight_gate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circ</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.gates.ExtendGate.neg_weight_gate" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Function neg_weight_gate : adding NOT(X) gate before the qubits associated with 0 state. For example, if we want to flip</p>
-</div></blockquote>
-<dl class="simple">
-<dt>#   the sign of <a href="#id3"><span class="problematic" id="id4">|</span></a>1101&gt;, we add X gate for q2 beforethe cccz gate, as follows.</dt><dd><dl class="simple">
-<dt>Args:</dt><dd><p>circ: quantum circuit
-qubits: the register of input qubits
-aux: auxiliary qubits
-state: a  string that represents the state of the qubits,such as ‘1101’</p>
-</dd>
-</dl>
+<dd><p>Function neg_weight_gate : adding NOT(X) gate before the qubits associated with 0 state. For example, if we want to flip the sign of <a href="#id3"><span class="problematic" id="id4">|</span></a>1101&gt;, we add X gate for q2 beforethe cccz gate, as follows.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circ</strong> – quantum circuit</p></li>
+<li><p><strong>qubits</strong> – the register of input qubits</p></li>
+<li><p><strong>aux</strong> – auxiliary qubits</p></li>
+<li><p><strong>state</strong> – a  string that represents the state of the qubits,such as ‘1101’</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>

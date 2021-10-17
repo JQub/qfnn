@@ -43,15 +43,12 @@
 <dt class="sig sig-object py" id="qfnn.qf_fb.c_qf_mixer.Net">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_qf_mixer.</span></span><span class="sig-name descname"><span class="pre">Net</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">given_ang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ang</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'False'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_qf_mixer.Net" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
-<p>class Net is to simply build up a network consisting of quantum layers ,using mat to represent the quantum gate..
-:param img_size: the width /height of input image (width = height)
-:param layers: a 2-dimensions list. for example,[[‘u’,4][‘p’,2]] means that the first layer is u-layer with 4 output qubit,</p>
-<blockquote>
-<div><p>and the second layer is p-layer with 2 output qubit</p>
-</div></blockquote>
+<p>class Net is to simply build up a network consisting of quantum layers ,using mat to represent the quantum gate.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
+<li><p><strong>img_size</strong> – the width /height of input image (width = height)</p></li>
+<li><p><strong>layers</strong> – a 2-dimensions list. for example,[[‘u’,4][‘p’,2]] means that the first layer is u-layer with 4 output qubit, and the second layer is p-layer with 2 output qubit</p></li>
 <li><p><strong>training</strong> – whether  training</p></li>
 <li><p><strong>binary</strong> – whether the input data should be binarized</p></li>
 <li><p><strong>given_ang</strong> – initial angle for N-layer if used</p></li>

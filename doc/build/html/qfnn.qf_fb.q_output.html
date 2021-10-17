@@ -42,9 +42,15 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="qfnn.qf_fb.q_output.add_measure">
 <span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.q_output.</span></span><span class="sig-name descname"><span class="pre">add_measure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.q_output.add_measure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_measure is used for add the measure gate to the qubits
-:param circuit: quantum circuit
-:param qubits: input quantum registers</p>
+<dd><p>Function add_measure is used for add the measure gate to the qubits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circuit</strong> – quantum circuit</p></li>
+<li><p><strong>qubits</strong> – input quantum registers</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -58,10 +64,14 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>counts</strong> – : quantum execute results, including different states with shots</p>
 </dd>
-</dl>
-<p>return:
-mycount:  shots of the state ‘1’ for each qubit
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shots of the state ‘1’ for each qubit
 bits: the number of qubits</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>mycount</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -72,17 +82,21 @@ bits: the number of qubits</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="qfnn.qf_fb.q_output.fire_ibmq">
 <span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.q_output.</span></span><span class="sig-name descname"><span class="pre">fire_ibmq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shots</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Simulation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backend_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ibmq_essex'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.q_output.fire_ibmq" title="Permalink to this definition">¶</a></dt>
-<dd><p>class fire_ibmq is used for execute quantum circuit using simulation or ibm quantum processor
-:param circuit: quantum circuit
-:param shots: number of shots
-:param Simulation: simulation or quantum processor
-:param backend_name: backend name if quantum processor</p>
+<dd><p>class fire_ibmq is used for execute quantum circuit using simulation or ibm quantum processor</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>quantum execute results, including different states with shots</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>circuit</strong> – quantum circuit</p></li>
+<li><p><strong>shots</strong> – number of shots</p></li>
+<li><p><strong>Simulation</strong> – simulation or quantum processor</p></li>
+<li><p><strong>backend_name</strong> – backend name if quantum processor</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>counts</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>quantum execute results, including different states with shots</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>counts</p>
 </dd>
 </dl>
 </dd></dl>
@@ -90,14 +104,16 @@ bits: the number of qubits</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="qfnn.qf_fb.q_output.get_unitary">
 <span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.q_output.</span></span><span class="sig-name descname"><span class="pre">get_unitary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IBMQ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.q_output.get_unitary" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function get_unitary is used for execute quantum circuit using simulation to get the unitary matrix that represents the circuit
-:param circuit: quantum circuit</p>
+<dd><p>Function get_unitary is used for execute quantum circuit using simulation to get the unitary matrix that represents the circuit</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>unitary matrix</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>circuit</strong> – quantum circuit</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>unitary</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>unitary matrix</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>unitary</p>
 </dd>
 </dl>
 </dd></dl>
