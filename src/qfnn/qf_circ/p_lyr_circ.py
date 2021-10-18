@@ -156,7 +156,7 @@ class P_Neuron_Circ(P_LYR_Circ):
         """
         for i in range (self.n_qubits):
             if len(ang)>i:
-                angle = float(2*asin(sqrt(ang[i])))
+                angle = float(2*math.asin(math.sqrt(float(ang[i]))))
                 circuit.ry(angle, in_qubits[i])
 
         for i in range(self.n_repeats):
