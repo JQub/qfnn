@@ -156,7 +156,7 @@ class P_Neuron_Circ(P_LYR_Circ):
         """
         for i in range (self.n_qubits):
             if len(ang)>i:
-                circuit.ry(2*asin(sqrt(input[i])), in_qubits[i])
+                circuit.ry(2*asin(sqrt(ang[i])), in_qubits[i])
 
         for i in range(self.n_repeats):
             # mul weight
