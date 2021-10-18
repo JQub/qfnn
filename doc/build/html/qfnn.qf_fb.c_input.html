@@ -37,89 +37,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="module-qfnn.qf_fb.c_input">
-<span id="qfnn-qf-fb-c-input-module"></span><h1>qfnn.qf_fb.c_input module<a class="headerlink" href="#module-qfnn.qf_fb.c_input" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.ToQuantumData">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">ToQuantumData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.ToQuantumData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>class ToQuantumData is to transform the input image into a unitary matrix to be encoded in quantum unitary matrix.</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.ToQuantumData_Batch">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">ToQuantumData_Batch</span></span><a class="headerlink" href="#qfnn.qf_fb.c_input.ToQuantumData_Batch" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.load_data">
-<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interest_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datapath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isppd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inference_batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_to_q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_workers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.load_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function load_data is to get the DataLoader of MNIST after preprocessing with the interest nums.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>interest_num</strong> – the specfic label list,such as [3,6]</p></li>
-<li><p><strong>datapath</strong> – the path of MNIST data</p></li>
-<li><p><strong>isppd</strong> – whether the data is loaded from qfMNIST,whch have done preprocessing</p></li>
-<li><p><strong>img_size</strong> – the width /height of input image (width = height)</p></li>
-<li><p><strong>batch_size</strong> – batch size while training</p></li>
-<li><p><strong>inference_batch_size</strong> – batch size while inferencing</p></li>
-<li><p><strong>is_to_q</strong> – whether the output data in loader is to be encoded in quantum unitary matrix</p></li>
-<li><p><strong>num_workers</strong> – for torch.utils.data.DataLoader.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a torch.utils.data.DataLoader for training.
-test_loader: a torch.utils.data.DataLoader for testing.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>train_loader</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.modify_target">
-<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">modify_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interest_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.modify_target" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.modify_target_ori">
-<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">modify_target_ori</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interest_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.modify_target_ori" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.select_num">
-<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">select_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interest_num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.select_num" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function select_num is to select the specfic label of a dataset to generate a sub-dataset.
-:param dataset: a pytorch-datasets
-:param interest_num: the specfic label list,such as [3,6]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a sub-dataset</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dataset</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="qfnn.qf_fb.c_input.to_quantum_matrix">
-<span class="sig-prename descclassname"><span class="pre">qfnn.qf_fb.c_input.</span></span><span class="sig-name descname"><span class="pre">to_quantum_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_fb.c_input.to_quantum_matrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to_quantum_matrix is to transform the input image into a unitary matrix.
-:param tensor: input image</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a unitary matrix.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>output_matrix</p>
-</dd>
-</dl>
-</dd></dl>
-
+  <section id="qfnn-qf-fb-c-input-module">
+<h1>qfnn.qf_fb.c_input module<a class="headerlink" href="#qfnn-qf-fb-c-input-module" title="Permalink to this headline">¶</a></h1>
 </section>
 
 
@@ -140,7 +59,7 @@ test_loader: a torch.utils.data.DataLoader for testing.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -165,7 +84,7 @@ test_loader: a torch.utils.data.DataLoader for testing.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, JQub.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

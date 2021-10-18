@@ -37,207 +37,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="module-qfnn.qf_circ.base">
-<span id="qfnn-qf-circ-base-module"></span><h1>qfnn.qf_circ.base module<a class="headerlink" href="#module-qfnn.qf_circ.base" title="Permalink to this headline">¶</a></h1>
-<p>Filename         :lib_circuit_base.py
-Description      :This document is used for fundamental class of quantum circuit
-Time             :2021/09/26 13:58:23
-Author           :Weiwen Jiang &amp; Zhirui Hu
-Version          :1.0</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.BaseCircuit">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_circ.base.</span></span><span class="sig-name descname"><span class="pre">BaseCircuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_repeats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.BaseCircuit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>BaseCircuit is a class, which includes fundamental functions of a circuit module.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n_qubits</strong> – input qubits of each unit</p></li>
-<li><p><strong>n_repeats</strong> – repeat times of each unit</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.BaseCircuit.add_input_qubits">
-<span class="sig-name descname"><span class="pre">add_input_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.BaseCircuit.add_input_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_input_qubits is to add a group of qubits as input qubit .</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p></li>
-<li><p><strong>name</strong> – The name of the group</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The register of qubits</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.BaseCircuit.add_qubits">
-<span class="sig-name descname"><span class="pre">add_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.BaseCircuit.add_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_qubits is to add a group of qubits to a circuit. [Test at 09/29]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> – The circuit that you add the unit at the end</p></li>
-<li><p><strong>name</strong> – The name of the group</p></li>
-<li><p><strong>number</strong> – The number of qubits in the group.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The register of qubits</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.BaseCircuit.forward">
-<em class="property"><span class="pre">abstract</span> <span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.BaseCircuit.forward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function forward is to add a circuit unit to the input qubits.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_circ.base.</span></span><span class="sig-name descname"><span class="pre">LinnerCircuit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_repeats</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#qfnn.qf_circ.base.BaseCircuit" title="qfnn.qf_circ.base.BaseCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">qfnn.qf_circ.base.BaseCircuit</span></code></a></p>
-<p>LinnerCircuit is a base class of u-layer circuit and ffnn circuit.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n_qubits</strong> – input qubits of each unit</p></li>
-<li><p><strong>n_repeats</strong> – repeat times of each unit</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.add_aux">
-<span class="sig-name descname"><span class="pre">add_aux</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.add_aux" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_aux  is to add a group of qubits as input qubit .</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The register of qubits</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.add_input_qubits">
-<span class="sig-name descname"><span class="pre">add_input_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linner_layer'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.add_input_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_input_qubits is to add a group of qubits as input qubit .</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The register of qubits</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.add_out_qubits">
-<span class="sig-name descname"><span class="pre">add_out_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.add_out_qubits" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_out_qubits is to add a group of qubits as input qubit .</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The register of qubits</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>qubits</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.add_weight">
-<span class="sig-name descname"><span class="pre">add_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.add_weight" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function add_weight is to add the circuit of ci=wi*xi.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p></li>
-<li><p><strong>weight</strong> – A list of binary weight.</p></li>
-<li><p><strong>in_qubits</strong> – The register of input qubits</p></li>
-<li><p><strong>data_matrix</strong> – The unitary matrix encoding into the qubits</p></li>
-<li><p><strong>aux</strong> – aux qubits</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.extract_from_weight">
-<span class="sig-name descname"><span class="pre">extract_from_weight</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.extract_from_weight" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_qubit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_matrix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.forward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function forward is to add the circuit of (∑wi*xi)^2/N.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p></li>
-<li><p><strong>weight</strong> – A list of binary weight.</p></li>
-<li><p><strong>in_qubits</strong> – The register of input qubits</p></li>
-<li><p><strong>out_qubit</strong> – The register of output qubits</p></li>
-<li><p><strong>data_matrix</strong> – The unitary matrix encoding into the qubits</p></li>
-<li><p><strong>aux</strong> – aux qubits</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.get_index_list">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">get_index_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.get_index_list" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.base.LinnerCircuit.sum2">
-<span class="sig-name descname"><span class="pre">sum2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_qubit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aux</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.base.LinnerCircuit.sum2" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function sum2 is to add the circuit of (∑ci)^2/N.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p></li>
-<li><p><strong>in_qubits</strong> – The register of input qubits</p></li>
-<li><p><strong>out_qubit</strong> – The register of output qubits</p></li>
-<li><p><strong>aux</strong> – aux qubits</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+  <section id="qfnn-qf-circ-base-module">
+<h1>qfnn.qf_circ.base module<a class="headerlink" href="#qfnn-qf-circ-base-module" title="Permalink to this headline">¶</a></h1>
 </section>
 
 
@@ -258,7 +59,7 @@ Version          :1.0</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -283,7 +84,7 @@ Version          :1.0</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, JQub.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

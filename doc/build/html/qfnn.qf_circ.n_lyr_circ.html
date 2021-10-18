@@ -37,51 +37,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="module-qfnn.qf_circ.n_lyr_circ">
-<span id="qfnn-qf-circ-n-lyr-circ-module"></span><h1>qfnn.qf_circ.n_lyr_circ module<a class="headerlink" href="#module-qfnn.qf_circ.n_lyr_circ" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="qfnn.qf_circ.n_lyr_circ.N_LYR_Circ">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">qfnn.qf_circ.n_lyr_circ.</span></span><span class="sig-name descname"><span class="pre">N_LYR_Circ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_repeats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.n_lyr_circ.N_LYR_Circ" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="qfnn.qf_circ.base.html#qfnn.qf_circ.base.BaseCircuit" title="qfnn.qf_circ.base.BaseCircuit"><code class="xref py py-class docutils literal notranslate"><span class="pre">qfnn.qf_circ.base.BaseCircuit</span></code></a></p>
-<p>N_LYR_Circ is a class, which includes functions to build N-layer circuit(for batch normalization)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>n_qubits</strong> – input qubits of each unit</p></li>
-<li><p><strong>n_repeats</strong> – repeat times of each unit</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.n_lyr_circ.N_LYR_Circ.add_norm_qubits">
-<span class="sig-name descname"><span class="pre">add_norm_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.n_lyr_circ.N_LYR_Circ.add_norm_qubits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.n_lyr_circ.N_LYR_Circ.add_out_qubits">
-<span class="sig-name descname"><span class="pre">add_out_qubits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.n_lyr_circ.N_LYR_Circ.add_out_qubits" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="qfnn.qf_circ.n_lyr_circ.N_LYR_Circ.forward">
-<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">circuit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_qubits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm_para</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#qfnn.qf_circ.n_lyr_circ.N_LYR_Circ.forward" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function forward is to add the circuit of N-layer.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>circuit</strong> – The  circuit that you add the unit at the end</p></li>
-<li><p><strong>input_qubits</strong> – The register of input qubits</p></li>
-<li><p><strong>norm_qubits</strong> – The register of qubits that do angle-encoding.</p></li>
-<li><p><strong>out_qubits</strong> – The register of output qubits</p></li>
-<li><p><strong>norm_flag</strong> – the direction of batch normalization.</p></li>
-<li><p><strong>norm_para</strong> – the parameter of batch normalization  encoded in the angle of qubits.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+  <section id="qfnn-qf-circ-n-lyr-circ-module">
+<h1>qfnn.qf_circ.n_lyr_circ module<a class="headerlink" href="#qfnn-qf-circ-n-lyr-circ-module" title="Permalink to this headline">¶</a></h1>
 </section>
 
 
@@ -102,7 +59,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -127,7 +84,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, JQub.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>
