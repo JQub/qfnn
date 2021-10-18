@@ -141,7 +141,7 @@ class P_Neuron_Circ(P_LYR_Circ):
         P_LYR_Circ.__init__(self,n_qubits,self.n_repeats)
 
 
-    def forward(self, circuit, weight, in_qubits, out_qubits,ang=[],aux = []):
+    def forward(self, circuit, weight, in_qubits, out_qubits,aux = [],ang=[]):
         """
         Function forward is to add the circuit of batch normalization.
 
@@ -156,7 +156,7 @@ class P_Neuron_Circ(P_LYR_Circ):
         """
         for i in range (self.n_qubits):
             if len(ang)>i:
-                circuit.ry(2*asin(sqrt(ang[i])), in_qubits[i])
+                circuit.ry(float(2*asin(sqrt(ang[i]))), in_qubits[i])
 
         for i in range(self.n_repeats):
             # mul weight
